@@ -9,7 +9,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var _selectedIndex = false;
+  int _selectedIndex = 0;
 
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
@@ -22,14 +22,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          _selectedIndex = !_selectedIndex;
+          _selectedIndex = index;
         });
       },
       child: Container(
           height: 50,
           width: 50,
           decoration: BoxDecoration(
-            color: Theme.of(context).hintColor,
+            color: _selectedIndex == index
+                ? Theme.of(context).hintColor
+                : const Color(0xffe7ebee),
             borderRadius: BorderRadius.circular(30),
           ),
           child: Icon(_icons[index],
