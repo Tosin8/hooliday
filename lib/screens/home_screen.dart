@@ -11,7 +11,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
+    FontAwesomeIcons.bus,
+    FontAwesomeIcons.personBiking,
+    FontAwesomeIcons.personWalking,
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
