@@ -45,12 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
         const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildIcon(0),
-            _buildIcon(1),
-            _buildIcon(2),
-            _buildIcon(3),
-          ],
+          children: _icons
+              .asMap()
+              .entries
+              .map(
+                (MapEntry map) => _buildIcon(map.key),
+              )
+              .toList(),
+          //  [
+          //   _buildIcon(0),
+          //   _buildIcon(1),
+          // ], // prefer to use the map feature in case of including another icon inorder to prevent manual insertion.
         ),
       ],
     )));
