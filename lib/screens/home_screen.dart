@@ -16,6 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
     FontAwesomeIcons.personWalking,
   ];
 
+  Widget _buildIcon(int index) {
+    return Container(
+      height: 60,
+      width: 60,
+      decoration: BoxDecoration(
+        color: Theme.of(context).hintColor,
+        borderRadius: BorderRadius.circular(30),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
