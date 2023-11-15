@@ -15,3 +15,13 @@ class Destination {
     required this.activities,
   });
 }
+
+List<Activity> activities = [
+  Activity(
+    imageUrl: imageUrl, 
+    name: name, 
+    type: type, 
+    startTimes: startTimes, 
+    rating: rating, 
+    price: price)
+];
