@@ -18,13 +18,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildIcon(int index) {
     return Container(
-      height: 60,
-      width: 60,
-      decoration: BoxDecoration(
-        color: Theme.of(context).hintColor,
-        borderRadius: BorderRadius.circular(30),
-      ),
-    );
+        height: 60,
+        width: 60,
+        decoration: BoxDecoration(
+          color: Theme.of(context).hintColor,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Icon(_icons[index],
+            size: 25.0, color: Theme.of(context).primaryColor));
   }
 
   @override
