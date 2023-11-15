@@ -34,8 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 : const Color(0xffe7ebee),
             borderRadius: BorderRadius.circular(30),
           ),
-          child: Icon(_icons[index],
-              size: 25.0, color: Theme.of(context).primaryColor)),
+          child: Icon(
+            _icons[index],
+            size: 25.0,
+            color: _selectedIndex == index
+                ? Theme.of(context).primaryColor
+                : Color(0xffb4c1c4),
+          )),
     );
   }
 
