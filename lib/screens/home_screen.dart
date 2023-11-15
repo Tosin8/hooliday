@@ -18,8 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildIcon(int index) {
     return Container(
-        height: 60,
-        width: 60,
+        height: 50,
+        width: 50,
         decoration: BoxDecoration(
           color: Theme.of(context).hintColor,
           borderRadius: BorderRadius.circular(30),
@@ -35,15 +35,23 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView(
       padding: const EdgeInsets.symmetric(vertical: 30.0),
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 20.0, right: 120.0),
           child: Text(
             'What would you like to find?',
-            style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(height: 20),
-        _buildIcon(0),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildIcon(0),
+            _buildIcon(1),
+            _buildIcon(2),
+            _buildIcon(3),
+          ],
+        ),
       ],
     )));
   }
