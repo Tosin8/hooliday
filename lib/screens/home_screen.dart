@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             size: 25.0,
             color: _selectedIndex == index
                 ? Theme.of(context).primaryColor
-                : Color(0xffb4c1c4),
+                : const Color(0xffb4c1c4),
           )),
     );
   }
@@ -74,13 +74,28 @@ class _HomeScreenState extends State<HomeScreen> {
           // ], // prefer to use the map feature in case of including another icon inorder to prevent manual insertion.
         ),
         const SizedBox(height: 20),
-        Row(
+        Column(
           children: [
-            Text(
-              'Top Destinations',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Top Destinations',
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5),
+                ),
+                Text(
+                  'See All',
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.0),
+                ),
+              ],
             ),
-            Text('See All'),
           ],
         )
       ],
