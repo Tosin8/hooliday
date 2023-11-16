@@ -73,6 +73,16 @@ class _HomeScreenState extends State<HomeScreen> {
           //   _buildIcon(1),
           // ], // prefer to use the map feature in case of including another icon inorder to prevent manual insertion.
         ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            Text(
+              'Top Destinations',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            Text('See All'),
+          ],
+        )
       ],
     )));
   }
