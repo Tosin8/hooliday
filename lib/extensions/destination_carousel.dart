@@ -41,10 +41,21 @@ class DestinationCarousel extends StatelessWidget {
             color: Colors.blue,
             height: 300.0,
             child: ListView.builder(
-              scrollDirection: Axis.vertical,
+                scrollDirection: Axis.horizontal,
                 itemCount: destinations.length,
                 itemBuilder: (BuildContext context, index) {
-                  return;
+                  Destination destination = destinations[index];
+
+                  return Container(
+                      margin: const EdgeInsets.all(10),
+                      color: Colors.red,
+                      width: 210,
+                      child: Stack(
+                        children: [
+                          Container(
+                              height: 120, width: 200, color: Colors.white)
+                        ],
+                      ));
                 })),
       ],
     );
