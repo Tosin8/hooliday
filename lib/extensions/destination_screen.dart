@@ -117,9 +117,26 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       child: Column(
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(activity.name),
                               Text('\$${activity.price}')
+                            ],
+                          ),
+                          Text(activity.type),
+                          // _buildRatingStars(activity.rating),
+                          SizedBox(height: 10.0),
+                          Row(
+                            children: [
+                              Container(
+                                width: 70.0,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).hintColor,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Text(activity.startTimes[0]),
+                              ),
                             ],
                           )
                         ],
