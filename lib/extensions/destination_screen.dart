@@ -116,68 +116,77 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.0)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                activity.name,
-                                style: const TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                              Column(
-                                children: [
-                                  Text(
-                                    '\$${activity.price}',
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 120.0,
+                                  child: Text(
+                                    activity.name,
                                     style: const TextStyle(
-                                        fontSize: 20.0,
+                                        fontSize: 18.0,
                                         fontWeight: FontWeight.w600),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                  Text(
-                                    'per pax',
-                                    style: const TextStyle(
-                                        fontSize: 14.0,
-                                        fontWeight: FontWeight.w200,
-                                        color: Colors.grey),
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      '\$${activity.price}',
+                                      style: const TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    Text(
+                                      'per pax',
+                                      style: const TextStyle(
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.grey),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Text(
+                              activity.type,
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            // _buildRatingStars(activity.rating),
+                            const SizedBox(height: 10.0),
+                            Row(
+                              children: [
+                                Container(
+                                  width: 70.0,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).hintColor,
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                ],
-                              )
-                            ],
-                          ),
-                          Text(
-                            activity.type,
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          // _buildRatingStars(activity.rating),
-                          const SizedBox(height: 10.0),
-                          Row(
-                            children: [
-                              Container(
-                                width: 70.0,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).hintColor,
-                                  borderRadius: BorderRadius.circular(10.0),
+                                  alignment: Alignment.center,
+                                  child: Text(activity.startTimes[0]),
                                 ),
-                                alignment: Alignment.center,
-                                child: Text(activity.startTimes[0]),
-                              ),
-                              const SizedBox(width: 10.0),
-                              Container(
-                                width: 70.0,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).hintColor,
-                                  borderRadius: BorderRadius.circular(10.0),
+                                const SizedBox(width: 10.0),
+                                Container(
+                                  width: 70.0,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).hintColor,
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Text(activity.startTimes[1]),
                                 ),
-                                alignment: Alignment.center,
-                                child: Text(activity.startTimes[1]),
-                              ),
-                            ],
-                          )
-                        ],
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],
