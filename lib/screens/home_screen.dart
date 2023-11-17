@@ -49,37 +49,39 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: ListView(
-      padding: const EdgeInsets.symmetric(vertical: 30.0),
-      children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0, right: 120.0),
-          child: Text(
-            'What would you like to find?',
-            style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
+      body: SafeArea(
+          child: ListView(
+        padding: const EdgeInsets.symmetric(vertical: 30.0),
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(left: 20.0, right: 120.0),
+            child: Text(
+              'What would you like to find?',
+              style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
+            ),
           ),
-        ),
-        const SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: _icons
-              .asMap()
-              .entries
-              .map(
-                (MapEntry map) => _buildIcon(map.key),
-              )
-              .toList(),
-          //  [
-          //   _buildIcon(0),
-          //   _buildIcon(1),
-          // ], // prefer to use the map feature in case of including another icon inorder to prevent manual insertion.
-        ),
-        const SizedBox(height: 20),
-        const DestinationCarousel(),
-        const SizedBox(height: 10),
-        const HotelCarousel(),
-      ],
-    )));
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: _icons
+                .asMap()
+                .entries
+                .map(
+                  (MapEntry map) => _buildIcon(map.key),
+                )
+                .toList(),
+            //  [
+            //   _buildIcon(0),
+            //   _buildIcon(1),
+            // ], // prefer to use the map feature in case of including another icon inorder to prevent manual insertion.
+          ),
+          const SizedBox(height: 20),
+          const DestinationCarousel(),
+          const SizedBox(height: 10),
+          const HotelCarousel(),
+        ],
+      )),
+      bottomNavigationBar: BottomNavigationBar(items: items),
+    );
   }
 }
