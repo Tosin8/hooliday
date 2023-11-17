@@ -62,7 +62,31 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   )
                 ],
               ),
-            )
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.destination.city,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.2),
+                ),
+                Row(
+                  children: [
+                    const Icon(FontAwesomeIcons.locationArrow,
+                        size: 10.0, color: Colors.white),
+                    const SizedBox(width: 5),
+                    Text(
+                      widget.destination.country,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         )
       ],
