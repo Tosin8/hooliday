@@ -13,8 +13,14 @@ class DestinationScreen extends StatefulWidget {
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
+  Text _buildRatingStars(int rating) {
+    String stars = '';
+    for (int i = 0; i < rating; i++) {
+      stars += ' ';
+    }
+    return Text(stars);
+  }
 
-  _buildRatingStars(int rating)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
