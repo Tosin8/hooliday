@@ -13,6 +13,8 @@ class DestinationScreen extends StatefulWidget {
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
+
+  _buildRatingStars(int rating)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
