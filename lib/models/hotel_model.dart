@@ -26,7 +26,7 @@ final List<Hotel> hotels = [
       address: '404 Great Street',
       price: 300),
   Hotel(
-      imageUrl: 'assets/images/hotel.j2pg',
+      imageUrl: 'assets/images/hotel2.jpg',
       name: 'Hotel 2',
       address: '404 Great Street',
       price: 240),

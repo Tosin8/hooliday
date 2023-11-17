@@ -44,7 +44,7 @@ class HotelCarousel extends StatelessWidget {
             height: 300.0,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: destinations.length,
+                itemCount: hotels.length,
                 itemBuilder: (BuildContext context, index) {
                   // Destination destination = destinations[index];
                   Hotel hotel = hotels[index];
@@ -60,7 +60,7 @@ class HotelCarousel extends StatelessWidget {
                             bottom: 15.0,
                             child: Container(
                               height: 120,
-                              width: 200,
+                              width: 220,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
                                 color: Colors.white,
@@ -72,17 +72,23 @@ class HotelCarousel extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      '${destination.activities.length} activities',
+                                      hotel.name,
                                       style: const TextStyle(
                                           fontSize: 20.0,
                                           fontWeight: FontWeight.w600,
                                           letterSpacing: 1.2),
                                     ),
+                                    SizedBox(height: 2),
                                     Text(
-                                      destination.description,
+                                      hotel.address,
                                       style:
                                           const TextStyle(color: Colors.grey),
-                                    )
+                                    ),
+                                    SizedBox(height: 2.0),
+                                    Text('\$${hotel.price} / Night',
+                                        style: TextStyle(
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.w600)),
                                   ],
                                 ),
                               ),
@@ -104,7 +110,7 @@ class HotelCarousel extends StatelessWidget {
                               child: Image(
                                   image: AssetImage(hotel.imageUrl),
                                   height: 180.0,
-                                  width: 180.0,
+                                  width: 220.0,
                                   fit: BoxFit.cover),
                             ),
                           )
