@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  int _currentTab = 0;
 
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
@@ -82,7 +83,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       )),
       bottomNavigationBar: BottomNavigationBar(
-        items: [BottomNavigationBarItem(icon: Icon(Icons.search))],
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 30.0),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, size: 30.0),
+            label: '',
+          ),
+        ],
         currentIndex: _currentTab,
       ),
     );
