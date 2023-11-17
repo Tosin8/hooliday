@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../models/destination_model.dart';
+import '../models/hotel_model.dart';
 
 class HotelCarousel extends StatelessWidget {
   const HotelCarousel({super.key});
@@ -46,7 +46,8 @@ class HotelCarousel extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: destinations.length,
                 itemBuilder: (BuildContext context, index) {
-                  Destination destination = destinations[index];
+                  // Destination destination = destinations[index];
+                  Hotel hotel = hotels[index];
 
                   return Container(
                       margin: const EdgeInsets.all(10),
@@ -98,49 +99,13 @@ class HotelCarousel extends StatelessWidget {
                                     blurRadius: 6.0,
                                   ),
                                 ]),
-                            child: Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  child: Image(
-                                      image: AssetImage(destination.imageUrl),
-                                      height: 180.0,
-                                      width: 180.0,
-                                      fit: BoxFit.cover),
-                                ),
-                                Positioned(
-                                  left: 10.0,
-                                  bottom: 10.0,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        destination.city,
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 24.0,
-                                            fontWeight: FontWeight.w600,
-                                            letterSpacing: 1.2),
-                                      ),
-                                      Row(
-                                        children: [
-                                          const Icon(
-                                              FontAwesomeIcons.locationArrow,
-                                              size: 10.0,
-                                              color: Colors.white),
-                                          const SizedBox(width: 5),
-                                          Text(
-                                            destination.country,
-                                            style: const TextStyle(
-                                                color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              child: Image(
+                                  image: AssetImage(hotel.imageUrl),
+                                  height: 180.0,
+                                  width: 180.0,
+                                  fit: BoxFit.cover),
                             ),
                           )
                         ],
