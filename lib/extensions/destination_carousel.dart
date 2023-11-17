@@ -53,31 +53,35 @@ class DestinationCarousel extends StatelessWidget {
                       child: Stack(
                         alignment: Alignment.topCenter,
                         children: [
-                          Container(
-                            height: 120,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Colors.white,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '${destination.activities.length} activities',
-                                    style: const TextStyle(
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w600,
-                                        letterSpacing: 1.2),
-                                  ),
-                                  Text(
-                                    destination.description,
-                                    style: const TextStyle(color: Colors.grey),
-                                  )
-                                ],
+                          Positioned(
+                            bottom: 15.0,
+                            child: Container(
+                              height: 120,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: Colors.white,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '${destination.activities.length} activities',
+                                      style: const TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 1.2),
+                                    ),
+                                    Text(
+                                      destination.description,
+                                      style:
+                                          const TextStyle(color: Colors.grey),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -94,11 +98,27 @@ class DestinationCarousel extends StatelessWidget {
                                 ]),
                             child: Stack(
                               children: [
-                                Image(
-                                    image: AssetImage(destination.imageUrl),
-                                    height: 180.0,
-                                    width: 180.0,
-                                    fit: BoxFit.cover)
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  child: Image(
+                                      image: AssetImage(destination.imageUrl),
+                                      height: 180.0,
+                                      width: 180.0,
+                                      fit: BoxFit.cover),
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      destination.city,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 1.2),
+                                    ),
+                                    Text(destination.country),
+                                  ],
+                                )
                               ],
                             ),
                           )
