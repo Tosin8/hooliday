@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../models/activity_model.dart';
 import '../models/destination_model.dart';
 
 class DestinationScreen extends StatefulWidget {
@@ -99,9 +100,14 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     Icon(Icons.location_on, color: Colors.white70, size: 25.0))
           ],
         ),
-        ListView.builder(
-            itemCount: widget.destination.activities.length,
-            itemBuilder: itemBuilder)
+        Expanded(
+          child: ListView.builder(
+              itemCount: widget.destination.activities.length,
+              itemBuilder: (BuildContext context, int index) {
+                Activity activity = widget.destination.activities[index];
+                return Stack();
+              }),
+        )
       ],
     ));
   }
