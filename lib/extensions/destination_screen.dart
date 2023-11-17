@@ -33,6 +33,17 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   child: Image(
                       image: AssetImage(widget.destination.imageUrl),
                       fit: BoxFit.cover)),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
+              child: Row(
+                children: [
+                  IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: Icon(Icons.arrow_back_ios, color: Colors.white))
+                ],
+              ),
             )
           ],
         )
