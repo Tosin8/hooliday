@@ -36,7 +36,7 @@ class DestinationCarousel extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Container(
             color: Colors.blue,
             height: 300.0,
@@ -53,7 +53,33 @@ class DestinationCarousel extends StatelessWidget {
                       child: Stack(
                         children: [
                           Container(
-                              height: 120, width: 200, color: Colors.white)
+                            height: 120,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: Colors.white,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '${destination.activities.length} activities',
+                                    style: const TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 1.2),
+                                  ),
+                                  Text(
+                                    destination.description,
+                                    style: TextStyle(color: Colors.grey),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
                         ],
                       ));
                 })),
