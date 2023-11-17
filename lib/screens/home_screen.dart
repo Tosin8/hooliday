@@ -81,7 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
           const HotelCarousel(),
         ],
       )),
-      bottomNavigationBar: BottomNavigationBar(items: items),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [BottomNavigationBarItem(icon: Icon(Icons.search))],
+        currentIndex: _currentTab,
+      ),
     );
   }
 }
