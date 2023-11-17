@@ -18,7 +18,7 @@ class Destination {
 
 List<Activity> activities = [
   Activity(
-      imageUrl: 'assets/images/stmarksbailica.jpg',
+      imageUrl: 'assets/images/stmarksbasilica.jpg',
       name: 'St. Mark\'s Basilica',
       type: 'Sightseeing Tour',
       startTimes: ['9:00 am', '11:00 am'],

@@ -200,6 +200,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
+                      child: Image(
+                          width: 110.0, image: AssetImage(activity.imageUrl)),
                     )
                   ],
                 );
