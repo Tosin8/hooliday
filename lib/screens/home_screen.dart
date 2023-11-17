@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hooliday/extensions/destination_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -74,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // ], // prefer to use the map feature in case of including another icon inorder to prevent manual insertion.
         ),
         const SizedBox(height: 20),
-        
+        const DestinationCarousel(),
       ],
     )));
   }
