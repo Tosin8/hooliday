@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: CircleAvatar(
               radius: 15.0,
-              backgroundImage: NetworkImage(''),
+              backgroundImage: AssetImage('assets/profile.jpg'),
             ),
             label: '',
           ),
