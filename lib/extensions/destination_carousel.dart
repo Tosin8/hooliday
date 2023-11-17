@@ -51,6 +51,7 @@ class DestinationCarousel extends StatelessWidget {
                       color: Colors.red,
                       width: 210,
                       child: Stack(
+                        alignment: Alignment.topCenter,
                         children: [
                           Container(
                             height: 120,
@@ -74,10 +75,31 @@ class DestinationCarousel extends StatelessWidget {
                                   ),
                                   Text(
                                     destination.description,
-                                    style: TextStyle(color: Colors.grey),
+                                    style: const TextStyle(color: Colors.grey),
                                   )
                                 ],
                               ),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20.0),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black26,
+                                    offset: Offset(0.0, 2.0),
+                                    blurRadius: 6.0,
+                                  ),
+                                ]),
+                            child: Stack(
+                              children: [
+                                Image(
+                                    image: AssetImage(destination.imageUrl),
+                                    height: 180.0,
+                                    width: 180.0,
+                                    fit: BoxFit.cover)
+                              ],
                             ),
                           )
                         ],
