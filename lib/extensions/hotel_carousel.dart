@@ -74,7 +74,7 @@ class HotelCarousel extends StatelessWidget {
                                     Text(
                                       hotel.name,
                                       style: const TextStyle(
-                                          fontSize: 20.0,
+                                          fontSize: 15.0,
                                           fontWeight: FontWeight.w600,
                                           letterSpacing: 1.2),
                                     ),

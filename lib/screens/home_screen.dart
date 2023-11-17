@@ -86,11 +86,15 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, size: 25.0),
+            icon: Icon(Icons.home, size: 25.0),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, size: 25.0),
+            icon: Icon(FontAwesomeIcons.compass, size: 25.0),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.heart, size: 25.0),
             label: '',
           ),
           BottomNavigationBarItem(
@@ -102,6 +106,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         currentIndex: _currentTab,
+        onTap: (int value) {
+          setState(() {
+            _currentTab = value;
+          });
+        },
       ),
     );
   }
