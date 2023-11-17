@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DestinationScreen extends StatefulWidget {
-  const DestinationScreen({super.key});
+import '../models/destination_model.dart';
 
+class DestinationScreen extends StatefulWidget {
+  const DestinationScreen({super.key, required this.destination});
+
+  final Destination destination;
   @override
   State<DestinationScreen> createState() => _DestinationScreenState();
 }
