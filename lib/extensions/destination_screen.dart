@@ -47,17 +47,19 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 children: [
                   IconButton(
                       onPressed: () => Navigator.pop(context),
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
-                  SizedBox(width: 30),
+                      icon: const Icon(Icons.arrow_back_ios,
+                          color: Colors.white)),
+                  const SizedBox(width: 30),
                   Row(
                     children: [
                       IconButton(
                         onPressed: () => Navigator.pop(context),
-                        icon: Icon(Icons.search, size: 30, color: Colors.white),
+                        icon: const Icon(Icons.search,
+                            size: 30, color: Colors.white),
                       ),
                       IconButton(
                           onPressed: () => Navigator.pop(context),
-                          icon: Icon(Icons.sort, size: 30),
+                          icon: const Icon(Icons.sort, size: 30),
                           color: Colors.white),
                     ],
                   )
@@ -93,7 +95,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ],
               ),
             ),
-            Positioned(
+            const Positioned(
                 right: 20.0,
                 bottom: 20.0,
                 child:
@@ -115,18 +117,43 @@ class _DestinationScreenState extends State<DestinationScreen> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.0)),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(activity.name),
-                              Text('\$${activity.price}')
+                              Text(
+                                activity.name,
+                                style: const TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    '\$${activity.price}',
+                                    style: const TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    'per pax',
+                                    style: const TextStyle(
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.w200,
+                                        color: Colors.grey),
+                                  ),
+                                ],
+                              )
                             ],
                           ),
-                          Text(activity.type),
+                          Text(
+                            activity.type,
+                            style: TextStyle(color: Colors.grey),
+                          ),
                           // _buildRatingStars(activity.rating),
-                          SizedBox(height: 10.0),
+                          const SizedBox(height: 10.0),
                           Row(
                             children: [
                               Container(
@@ -135,7 +162,18 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                   color: Theme.of(context).hintColor,
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                alignment: Alignment.center,
                                 child: Text(activity.startTimes[0]),
+                              ),
+                              const SizedBox(width: 10.0),
+                              Container(
+                                width: 70.0,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).hintColor,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                alignment: Alignment.center,
+                                child: Text(activity.startTimes[1]),
                               ),
                             ],
                           )
