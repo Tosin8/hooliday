@@ -197,6 +197,9 @@ class _DestinationScreenState extends State<DestinationScreen> {
                           ],
                         ),
                       ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
                     )
                   ],
                 );
