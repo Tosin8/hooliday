@@ -39,7 +39,7 @@ class DestinationCarousel extends StatelessWidget {
         ),
         const SizedBox(height: 10.0),
         Container(
-            color: Colors.blue,
+            // color: Colors.blue,
             height: 300.0,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -49,7 +49,7 @@ class DestinationCarousel extends StatelessWidget {
 
                   return Container(
                       margin: const EdgeInsets.all(10),
-                      color: Colors.red,
+                      //   color: Colors.red,
                       width: 210,
                       child: Stack(
                         alignment: Alignment.topCenter,
