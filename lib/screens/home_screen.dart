@@ -86,11 +86,18 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, size: 30.0),
+            icon: Icon(Icons.search, size: 25.0),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, size: 30.0),
+            icon: Icon(Icons.search, size: 25.0),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: CircleAvatar(
+              radius: 15.0,
+              backgroundImage: NetworkImage(''),
+            ),
             label: '',
           ),
         ],
