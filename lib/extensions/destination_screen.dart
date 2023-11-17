@@ -22,12 +22,17 @@ class _DestinationScreenState extends State<DestinationScreen> {
               height: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         color: Colors.black26,
                         offset: Offset(0.0, 2.0),
                         blurRadius: 6.0)
                   ]),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: Image(
+                      image: AssetImage(widget.destination.imageUrl),
+                      fit: BoxFit.cover)),
             )
           ],
         )
