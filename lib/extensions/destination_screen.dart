@@ -160,7 +160,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                               activity.type,
                               style: TextStyle(color: Colors.grey),
                             ),
-                            // _buildRatingStars(activity.rating),
+                            _buildRatingStars(activity.rating),
                             const SizedBox(height: 10.0),
                             Row(
                               children: [
