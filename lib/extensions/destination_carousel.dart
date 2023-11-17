@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/models/destination_model.dart';
 
 class DestinationCarousel extends StatelessWidget {
   const DestinationCarousel({super.key});
@@ -37,9 +38,14 @@ class DestinationCarousel extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Container(
-          color: Colors.blue,
-          height: 300.0,
-        )
+            color: Colors.blue,
+            height: 300.0,
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+                itemCount: destinations.length,
+                itemBuilder: (BuildContext context, index) {
+                  return;
+                })),
       ],
     );
   }
