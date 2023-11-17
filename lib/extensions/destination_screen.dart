@@ -98,7 +98,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 child:
                     Icon(Icons.location_on, color: Colors.white70, size: 25.0))
           ],
-        )
+        ),
+        ListView.builder(
+            itemCount: widget.destination.activities.length,
+            itemBuilder: itemBuilder)
       ],
     ));
   }
