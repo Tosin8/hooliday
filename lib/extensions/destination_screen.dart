@@ -105,7 +105,28 @@ class _DestinationScreenState extends State<DestinationScreen> {
               itemCount: widget.destination.activities.length,
               itemBuilder: (BuildContext context, int index) {
                 Activity activity = widget.destination.activities[index];
-                return Stack();
+                return Stack(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
+                      height: 170.0,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.0)),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(activity.name),
+                              Text('\$${activity.price}')
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                );
               }),
         )
       ],
