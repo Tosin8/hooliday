@@ -43,9 +43,9 @@ class _SplashBtnState extends State<SplashBtn> {
                 Navigator.push(
                     context,
                     PageTransition(
-                        child: const HomeScreen(),
-                        type: PageTransitionType.scale,
-                        alignment: Alignment.bottomCenter));
+                      child: const HomeScreen(),
+                      type: PageTransitionType.leftToRightWithFade,
+                    ));
               },
               child: Container(
                 width: 51,
