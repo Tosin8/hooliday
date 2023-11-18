@@ -24,7 +24,7 @@ class _SplashBtnState extends State<SplashBtn> {
               width: 58,
               height: 107,
               decoration: ShapeDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   begin: Alignment(0.00, -1.00),
                   end: Alignment(0, 1),
                   colors: [Color(0xFFD9D9D9), Color(0xCC000000)],
@@ -43,14 +43,14 @@ class _SplashBtnState extends State<SplashBtn> {
                 Navigator.push(
                     context,
                     PageTransition(
-                        child: HomeScreen(),
+                        child: const HomeScreen(),
                         type: PageTransitionType.scale,
                         alignment: Alignment.bottomCenter));
               },
               child: Container(
                 width: 51,
                 height: 51,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Color(0xFF252222),
                   shape: OvalBorder(
                     side: BorderSide(width: 2, color: Color(0xFF1C1919)),
@@ -67,7 +67,7 @@ class _SplashBtnState extends State<SplashBtn> {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             left: 19,
             top: 73,
             child: Text(
@@ -94,8 +94,8 @@ class _SplashBtnState extends State<SplashBtn> {
                   width: 12.94,
                   height: 12.94,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
-                  child: Stack(children: []),
+                  decoration: const BoxDecoration(),
+                  child: const Stack(children: []),
                 ),
               ),
             ),
@@ -111,8 +111,8 @@ class _SplashBtnState extends State<SplashBtn> {
                 width: 12.94,
                 height: 12.94,
                 clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(),
-                child: Stack(children: []),
+                decoration: const BoxDecoration(),
+                child: const Stack(children: []),
               ),
             ),
           ),
