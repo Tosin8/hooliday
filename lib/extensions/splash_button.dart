@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooliday/screens/home_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashBtn extends StatefulWidget {
   const SplashBtn({super.key});
@@ -41,9 +42,10 @@ class _SplashBtnState extends State<SplashBtn> {
               onTap: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    ));
+                    PageTransition(
+                        child: HomeScreen(),
+                        type: PageTransitionType.scale,
+                        alignment: Alignment.bottomCenter));
               },
               child: Container(
                 width: 51,
