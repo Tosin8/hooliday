@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/extensions/splash_button.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -19,9 +20,9 @@ class SplashScreen extends StatelessWidget {
             const Color(0xff252222),
             Colors.white.withOpacity(0)
           ], begin: const Alignment(0.00, -1.00), end: const Alignment(0, 1))),
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 300),
-            child: const Column(
+          child: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 100),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
@@ -34,6 +35,7 @@ class SplashScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Fleur De Leah'),
                 ),
+                SizedBox(height: 50),
                 Text(
                   'Explore Your World',
                   style: TextStyle(
@@ -42,7 +44,17 @@ class SplashScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       height: 0,
                       letterSpacing: 1.2),
-                )
+                ),
+                Text(
+                  'Everyday is an Hooliday',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      height: 0),
+                ),
+                SizedBox(height: 20),
+                SplashBtn()
               ],
             ),
           )),
