@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooliday/extensions/destination_carousel.dart';
 import 'package:hooliday/extensions/hotel_carousel.dart';
+import 'package:hooliday/screens/favorite.dart';
+import 'package:hooliday/screens/profile.dart';
+import 'package:hooliday/screens/search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,7 +17,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
-  final List<Widget> _tabs = [];
+  final List<Widget> _tabs = [
+    HomeScreen(),
+    UserExplore(),
+    UserFavs(),
+    UserProfile(),
+  ];
 
   final List<IconData> _icons = [
     FontAwesomeIcons.plane,
