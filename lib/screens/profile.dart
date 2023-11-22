@@ -95,6 +95,37 @@ class UserProfile extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          Positioned(
+            bottom: -230,
+            left: 40,
+            child: Card(
+              elevation: 30,
+              shadowColor: Colors.black,
+              child: Container(
+                width: 320,
+                height: 120,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                child: Column(
+                  children: [
+                    ListTile(
+                      minLeadingWidth: 5,
+                      title: Text('Notifications'),
+                      leading: Icon(Icons.notifications_active),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                    ),
+                    Divider(height: 4),
+                    ListTile(
+                      minLeadingWidth: 5,
+                      title: Text('Account'),
+                      leading: Icon(Icons.person),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           )
         ],
       ),
