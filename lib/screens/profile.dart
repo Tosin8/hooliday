@@ -9,13 +9,19 @@ class UserProfile extends StatelessWidget {
         body: Stack(
       children: [
         Container(
-          width: double.infinity,
-          height: 300,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/profile_bkg1.jpg'),
-                  fit: BoxFit.cover)),
-        )
+            width: double.infinity,
+            height: 300,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/profile_bkg1.jpg'),
+                    fit: BoxFit.cover)),
+            child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Colors.black.withOpacity(0.6),
+                Colors.black.withOpacity(0.3),
+              ], begin: Alignment.bottomRight)),
+            ))
       ],
     ));
   }
