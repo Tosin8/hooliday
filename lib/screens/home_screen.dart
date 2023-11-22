@@ -17,13 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
-  final List<Widget> _tabs = [
-    HomeScreen(),
-    UserExplore(),
-    UserFavs(),
-    UserProfile(),
-  ];
-
   final List<IconData> _icons = [
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bus,
@@ -92,36 +85,36 @@ class _HomeScreenState extends State<HomeScreen> {
           const HotelCarousel(),
         ],
       )),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 25.0),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.compass, size: 25.0),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.heart, size: 25.0),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: CircleAvatar(
-              radius: 15.0,
-              backgroundImage: AssetImage('assets/profile.jpg'),
-            ),
-            label: '',
-          ),
-        ],
-        currentIndex: _currentTab,
-        onTap: (int value) {
-          setState(() {
-            _currentTab = value;
-          });
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   type: BottomNavigationBarType.fixed,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home, size: 25.0),
+      //       label: '',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(FontAwesomeIcons.compass, size: 25.0),
+      //       label: '',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(FontAwesomeIcons.heart, size: 25.0),
+      //       label: '',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: CircleAvatar(
+      //         radius: 15.0,
+      //         backgroundImage: AssetImage('assets/profile.jpg'),
+      //       ),
+      //       label: '',
+      //     ),
+      //   ],
+      //   currentIndex: _currentTab,
+      //   onTap: (int value) {
+      //     setState(() {
+      //       _currentTab = value;
+      //     });
+      //   },
+      // ),
     );
   }
 }

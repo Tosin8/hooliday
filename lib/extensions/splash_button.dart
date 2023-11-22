@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/extensions/bottom_navs.dart';
 import 'package:hooliday/screens/home_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -43,7 +44,8 @@ class _SplashBtnState extends State<SplashBtn> {
                 Navigator.push(
                     context,
                     PageTransition(
-                      child: const HomeScreen(),
+                      // child: const HomeScreen(),
+                      child: const AppNavs(),
                       type: PageTransitionType.leftToRightWithFade,
                     ));
               },
