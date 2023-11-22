@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooliday/extensions/splash_screen.dart';
+import 'package:hooliday/screens/profile.dart';
 
 import 'screens/home_screen.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         hintColor: Color(0xffd8ecf1),
         scaffoldBackgroundColor: Color(0xfff3f5f7),
       ),
-      home: SplashScreen(),
+      home: UserProfile(),
     );
   }
 }
