@@ -16,10 +16,10 @@ class SplashScreen extends StatelessWidget {
       child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            const Color(0xff252222),
-            Colors.white.withOpacity(0)
-          ], begin: const Alignment(0.00, -1.00), end: const Alignment(0, 1))),
+              gradient: LinearGradient(
+            colors: [const Color(0xff252222), Colors.white.withOpacity(0)],
+            begin: Alignment.bottomRight,
+          )),
           child: const Padding(
             padding: EdgeInsets.symmetric(vertical: 100),
             child: Column(
@@ -29,9 +29,7 @@ class SplashScreen extends StatelessWidget {
                   'Hooliday',
                   style: TextStyle(
                       fontSize: 48,
-                      color: Color(
-                        0xff130f0f,
-                      ),
+                      color: Colors.white,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Fleur De Leah'),
                 ),
