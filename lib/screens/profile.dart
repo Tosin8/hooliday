@@ -5,6 +5,18 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Stack());
+    return Scaffold(
+        body: Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          height: 300,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/profile_bkg1.jpg'),
+                  fit: BoxFit.cover)),
+        )
+      ],
+    ));
   }
 }
