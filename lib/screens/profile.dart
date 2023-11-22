@@ -25,6 +25,7 @@ class UserProfile extends StatelessWidget {
                 children: [
                   SizedBox(height: 30),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
                           onPressed: () {},
@@ -39,6 +40,13 @@ class UserProfile extends StatelessWidget {
                             color: Colors.white,
                           ))
                     ],
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/profile.jpg'))),
                   )
                 ],
               ),
