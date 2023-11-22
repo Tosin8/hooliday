@@ -49,9 +49,9 @@ class SplashScreen extends StatelessWidget {
                 Text(
                   'Everyday is an Hooliday',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 14,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w300,
                       height: 0),
                 ),
                 SizedBox(height: 20),
