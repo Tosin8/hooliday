@@ -8,6 +8,7 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Container(
               width: double.infinity,
@@ -63,7 +64,38 @@ class UserProfile extends StatelessWidget {
                     )
                   ],
                 ),
-              ))
+              )),
+          Positioned(
+            bottom: -100,
+            left: 40,
+            child: Card(
+              elevation: 30,
+              shadowColor: Colors.black,
+              child: Container(
+                width: 320,
+                height: 120,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                child: Column(
+                  children: [
+                    ListTile(
+                      minLeadingWidth: 5,
+                      title: Text('My Address'),
+                      leading: Icon(Icons.location_on),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                    ),
+                    Divider(height: 4),
+                    ListTile(
+                      minLeadingWidth: 5,
+                      title: Text('Account'),
+                      leading: Icon(Icons.person),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     ));
