@@ -103,7 +103,7 @@ class UserProfile extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: -410,
+              bottom: -350,
               left: 40,
               child: Card(
                 elevation: 30,
