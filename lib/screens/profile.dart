@@ -21,6 +21,27 @@ class UserProfile extends StatelessWidget {
                 Colors.black.withOpacity(0.6),
                 Colors.black.withOpacity(0.3),
               ], begin: Alignment.bottomRight)),
+              child: Column(
+                children: [
+                  SizedBox(height: 30),
+                  Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite_border_outlined,
+                            color: Colors.white,
+                          )),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.shopping_bag,
+                            color: Colors.white,
+                          ))
+                    ],
+                  )
+                ],
+              ),
             ))
       ],
     ));
