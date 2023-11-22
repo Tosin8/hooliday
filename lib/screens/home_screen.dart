@@ -14,6 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _currentTab = 0;
 
+  final List<Widget> _tabs = [];
+
   final List<IconData> _icons = [
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bus,
