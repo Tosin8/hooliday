@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/hotel_model.dart';
-
 class EventsCarousel extends StatelessWidget {
   const EventsCarousel({super.key});
 
