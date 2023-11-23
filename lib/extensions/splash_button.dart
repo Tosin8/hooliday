@@ -18,7 +18,7 @@ class _SplashBtnState extends State<SplashBtn> {
         Navigator.push(
             context,
             PageTransition(
-              type: PageTransitionType.bottomToTopPop,
+              type: PageTransitionType.bottomToTop,
               child: AppNavs(),
             ));
       },
