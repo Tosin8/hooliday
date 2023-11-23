@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/models/festival_model.dart';
 
 class EventsCarousel extends StatelessWidget {
   const EventsCarousel({super.key});
@@ -41,10 +42,10 @@ class EventsCarousel extends StatelessWidget {
             height: 300.0,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: hotels.length,
+                itemCount: festivals.length,
                 itemBuilder: (BuildContext context, index) {
                   // Destination destination = destinations[index];
-                  Hotel hotel = hotels[index];
+                  Festival hotel = festivals[index];
 
                   return Container(
                       margin: const EdgeInsets.all(10),
