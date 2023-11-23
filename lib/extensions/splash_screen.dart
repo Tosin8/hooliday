@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width,
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/splash_screen.jpg'), fit: BoxFit.cover),
+            image: AssetImage('assets/splash_screen2.jpg'), fit: BoxFit.cover),
       ),
       child: Container(
           width: double.infinity,
