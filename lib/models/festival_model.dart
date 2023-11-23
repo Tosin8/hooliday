@@ -12,4 +12,20 @@ class Festival {
   });
 }
 
-final List<Festival> festivals = [];
+final List<Festival> festivals = [
+  Festival(
+      imageUrl: 'assets/images/china_new_year.jpg',
+      name: 'China New Year',
+      address: 'Beijing, China',
+      price: 300),
+  Festival(
+      imageUrl: 'assets/images/oktober_fest.jpg',
+      name: 'Oktober Festival',
+      address: 'Munich, Germany',
+      price: 420),
+  Festival(
+      imageUrl: 'assets/images/diwali_fest.jpg',
+      name: 'Diwali Festival',
+      address: 'New Delhi, India',
+      price: 420),
+];

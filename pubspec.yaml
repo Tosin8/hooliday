@@ -67,6 +67,9 @@ flutter:
     - assets/splash_screen2.jpg
     - assets/images/profile_bkg1.jpg
     - assets/images/profile_bkg2.jpg
+    - assets/images/china_new_year.jpg
+    - assets/images/oktober_fest.jpg
+    - assets/images/diwali_fest.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
