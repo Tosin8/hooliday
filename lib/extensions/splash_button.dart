@@ -14,11 +14,17 @@ class _SplashBtnState extends State<SplashBtn> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 300,
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
-        ));
+      width: 250,
+      height: 60,
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Align(
+          child: Text(
+        'Book Trip',
+        style: TextStyle(color: Colors.white, fontSize: 16),
+      )),
+    );
   }
 }
