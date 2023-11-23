@@ -6,6 +6,8 @@ import 'package:hooliday/screens/favorite.dart';
 import 'package:hooliday/screens/profile.dart';
 import 'package:hooliday/screens/search.dart';
 
+import '../extensions/event_carousel.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -83,38 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
           const DestinationCarousel(),
           const SizedBox(height: 10),
           const HotelCarousel(),
+          const SizedBox(height: 10),
+          const EventsCarousel(),
         ],
       )),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBarType.fixed,
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home, size: 25.0),
-      //       label: '',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(FontAwesomeIcons.compass, size: 25.0),
-      //       label: '',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(FontAwesomeIcons.heart, size: 25.0),
-      //       label: '',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: CircleAvatar(
-      //         radius: 15.0,
-      //         backgroundImage: AssetImage('assets/profile.jpg'),
-      //       ),
-      //       label: '',
-      //     ),
-      //   ],
-      //   currentIndex: _currentTab,
-      //   onTap: (int value) {
-      //     setState(() {
-      //       _currentTab = value;
-      //     });
-      //   },
-      // ),
     );
   }
 }
