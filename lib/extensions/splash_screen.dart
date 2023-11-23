@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                 colors: [
-                  Colors.black.withOpacity(0.6),
+                  Colors.black.withOpacity(0.9),
                   Colors.black.withOpacity(0.1),
                 ],
                 begin: Alignment.bottomRight,
@@ -48,11 +48,11 @@ class SplashScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Visit amazing pieces around the world,\n recharge your energy and enjoy your time',
+                          'Visit amazing pieces around the world,\n recharge your energy and enjoy your time.',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: 40),
                         SplashBtn()
                       ],
                     ),
