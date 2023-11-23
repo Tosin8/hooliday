@@ -15,7 +15,7 @@ class EventsCarousel extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Events n Festivals',
+                'Festivals',
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
