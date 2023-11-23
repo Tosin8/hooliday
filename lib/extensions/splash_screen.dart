@@ -24,15 +24,46 @@ class SplashScreen extends StatelessWidget {
                   ],
                   begin: Alignment.bottomRight,
                 )),
-                child: Column(
-                  children: [
-                    Text(
-                      'Hooliday',
-                      style: TextStyle(
-                        color: Colors.white,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 200),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Hooliday',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40,
+                            fontFamily: 'Fleur De Leah'),
                       ),
-                    )
-                  ],
+                      SizedBox(height: 200),
+                      Padding(
+                        padding: EdgeInsets.only(left: 4),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Take a break from\n your busy life',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Text(
+                              'Visit amazing pieces around the world,\n recharge your energy and enjoy your time',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            SizedBox(),
+                            SplashBtn()
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ))));
   }
 }
