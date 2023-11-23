@@ -15,55 +15,48 @@ class SplashScreen extends StatelessWidget {
                   fit: BoxFit.cover),
             ),
             child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                  colors: [
-                    Colors.black.withOpacity(0.6),
-                    Colors.black.withOpacity(0.1),
-                  ],
-                  begin: Alignment.bottomRight,
-                )),
-                child: const Padding(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                colors: [
+                  Colors.black.withOpacity(0.6),
+                  Colors.black.withOpacity(0.1),
+                ],
+                begin: Alignment.bottomRight,
+              )),
+              child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 200),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Hooliday',
-                        style: TextStyle(
+                  child: Column(children: [
+                    Text(
+                      'Hooliday',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontFamily: 'Fleur De Leah'),
+                    ),
+                    SizedBox(height: 100),
+                    Column(
+                      children: [
+                        Text(
+                          'Take a break from\n your busy life',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: 40,
-                            fontFamily: 'Fleur De Leah'),
-                      ),
-                      SizedBox(height: 200),
-                      Padding(
-                        padding: EdgeInsets.only(left: 4),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Take a break from\n your busy life',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              'Visit amazing pieces around the world,\n recharge your energy and enjoy your time',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            SizedBox(),
-                            SplashBtn()
-                          ],
+                            fontSize: 30,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      )
-                    ],
-                  ),
-                ))));
+                        SizedBox(height: 20),
+                        Text(
+                          'Visit amazing pieces around the world,\n recharge your energy and enjoy your time',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        SizedBox(height: 30),
+                        SplashBtn()
+                      ],
+                    ),
+                  ])),
+            )));
   }
 }
