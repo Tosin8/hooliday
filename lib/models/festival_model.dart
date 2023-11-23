@@ -11,3 +11,5 @@ class Festival {
     required this.price,
   });
 }
+
+final List<Festival> festivals = [];
