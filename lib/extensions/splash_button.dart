@@ -15,7 +15,12 @@ class _SplashBtnState extends State<SplashBtn> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: builder));
+        Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.bottomToTopPop,
+              child: AppNavs(),
+            ));
       },
       child: Container(
         width: 250,
