@@ -18,14 +18,15 @@ class SplashScreen extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: LinearGradient(
             colors: [
-              Colors.white.withOpacity(0.6),
-              Colors.white.withOpacity(0)
+              Colors.black.withOpacity(0.6),
+              Colors.black.withOpacity(0.1),
             ],
             begin: Alignment.bottomRight,
           )),
           child: const Padding(
-            padding: EdgeInsets.symmetric(vertical: 100),
+            padding: EdgeInsets.symmetric(vertical: 120),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
@@ -49,7 +50,7 @@ class SplashScreen extends StatelessWidget {
                 Text(
                   'Everyday is an Hooliday',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w300,
                       height: 0),
