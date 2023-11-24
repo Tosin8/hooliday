@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/extensions/forms/login.dart';
 import 'package:hooliday/extensions/splash_button.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -24,8 +25,8 @@ class SplashScreen extends StatelessWidget {
                 ],
                 begin: Alignment.bottomRight,
               )),
-              child: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 200),
+              child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 180),
                   child: Column(children: [
                     Text(
                       'Hooliday',
@@ -52,8 +53,33 @@ class SplashScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 40),
-                        SplashBtn()
+                        SizedBox(height: 30),
+                        SplashBtn(),
+                        SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'I have an account',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            SizedBox(width: 10),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignIn()));
+                              },
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        )
                       ],
                     ),
                   ])),

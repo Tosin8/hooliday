@@ -10,9 +10,12 @@ class UserFavs extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           automaticallyImplyLeading: false,
-          title: Text('Favorites'),
+          title: const Text(
+            'Favorites',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
-        body: Center(
+        body: const Center(
           child: Text('No favorites is available'),
         ));
   }
