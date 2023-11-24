@@ -26,19 +26,19 @@ class SplashScreen extends StatelessWidget {
                 begin: Alignment.bottomRight,
               )),
               child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 180),
+                  padding: const EdgeInsets.symmetric(vertical: 180),
                   child: Column(children: [
-                    Text(
+                    const Text(
                       'Hooliday',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
                           fontFamily: 'Fleur De Leah'),
                     ),
-                    SizedBox(height: 100),
+                    const SizedBox(height: 100),
                     Column(
                       children: [
-                        Text(
+                        const Text(
                           'Take a break from\n your busy life',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -47,31 +47,31 @@ class SplashScreen extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        SizedBox(height: 20),
-                        Text(
+                        const SizedBox(height: 20),
+                        const Text(
                           'Visit amazing pieces around the world,\n recharge your energy and enjoy your time.',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 30),
-                        SplashBtn(),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 30),
+                        const SplashBtn(),
+                        const SizedBox(height: 8),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               'I have an account',
                               style: TextStyle(color: Colors.white),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SignIn()));
+                                        builder: (context) => const SignIn()));
                               },
-                              child: Text(
+                              child: const Text(
                                 'Login',
                                 style: TextStyle(
                                     color: Colors.blue,

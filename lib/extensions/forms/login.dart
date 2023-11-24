@@ -1,28 +1,19 @@
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
+import 'components/login_body.dart';
+
+class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
   @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Hooliday',
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w300,
-                  fontFamily: 'Fleur De Leah'),
-            )
-          ],
-        ),
-      ),
-    ));
+    return const Scaffold(
+      body: LoginBody(),
+    );
   }
 }
