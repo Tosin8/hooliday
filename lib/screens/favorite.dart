@@ -5,6 +5,15 @@ class UserFavs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          title: Text('Favorites'),
+        ),
+        body: Center(
+          child: Text('No favorites is available'),
+        ));
   }
 }
