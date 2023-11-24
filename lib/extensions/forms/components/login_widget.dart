@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/screens/home_screen.dart';
 
 import '../../constant.dart';
 
@@ -18,7 +19,8 @@ class FormButton extends StatelessWidget {
           _formKey.currentState?.save();
 
           // if all is valid , then go to homepage
-          Navigator.pushNamed(context, Home.routeName);
+          Navigator.push(
+              context, MaterialPageRoute(builder: ((context) => HomeScreen())));
         }
       },
       child: Container(
