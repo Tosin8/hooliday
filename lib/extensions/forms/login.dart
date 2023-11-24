@@ -5,6 +5,14 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container());
+    return Scaffold(
+        body: Container(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [Text('Hooliday')],
+        ),
+      ),
+    ));
   }
 }
