@@ -54,9 +54,9 @@ class SplashScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white),
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 60),
                       const SplashBtn(),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -76,7 +76,8 @@ class SplashScreen extends StatelessWidget {
                               'Login',
                               style: TextStyle(
                                   color: Colors.blue,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.underline),
                             ),
                           )
                         ],
