@@ -10,7 +10,17 @@ class SignIn extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: [Text('Hooliday')],
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Hooliday',
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Fleur De Leah'),
+            )
+          ],
         ),
       ),
     ));
