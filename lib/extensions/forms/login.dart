@@ -5,8 +5,6 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('Login page'),
-    );
+    return Scaffold(body: Container());
   }
 }
