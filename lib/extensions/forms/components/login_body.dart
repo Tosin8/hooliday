@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../constant.dart';
 import '../forgotpass.dart';
+import 'login_widget.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -194,12 +195,57 @@ class _formBodyState extends State<formBody> {
                       style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   ),
+                  FormError(errors: errors),
                   SizedBox(height: 20),
-                  
+                  FormButton(formKey: _formKey),
+                  const SizedBox(height: 15),
+                  const Divider(),
+                  const SizedBox(height: 15),
+                   Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialCard(
+                    icon: 'assets/icons/google-icon.svg',
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: 'assets/icons/facebook-2.svg',
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: 'assets/icons/twitter.svg',
+                    press: () {},
+                  ),
                 ],
               ),
+              const SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account? ",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.popAndPushNamed(context, SignUp.routeName);
+                    },
+                    child: const Text(
+                      "Sign Up ",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: kPrimaryColor,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
+                ],
+              )
             ],
-          ),
-        ));
-  }
+          );
+        
+                
+  }           
+          
 }
