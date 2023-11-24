@@ -42,13 +42,12 @@ class formBody extends StatefulWidget {
 }
 
 class _formBodyState extends State<formBody> {
+  final _formKey = GlobalKey<FormState>();
+  late String email;
+  late String password;
+  bool remember = false;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        children: [],
-      ),
-    );
+    return Form(child: Padding(padding: EdgeInsets.symmetric(horizontal: 10)));
   }
 }
