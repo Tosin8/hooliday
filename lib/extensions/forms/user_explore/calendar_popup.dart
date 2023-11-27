@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class CalendarPopupView extends StatefulWidget {
@@ -50,6 +52,24 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
     return Dialog(
         backgroundColor: Colors.transparent,
         insetPadding: EdgeInsets.zero,
-        child: AnimatedBuilder(animation: animation, builder: builder));
+        child: AnimatedBuilder(
+            animation: animationController,
+            builder: (BuildContext context, _) {
+              return AnimatedOpacity(
+                opacity: animationController.value,
+                duration: Duration(milliseconds: 100),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  onTap: () {
+                    if (widget.barrierDismissible) {
+                      Navigator.pop(context);
+                    }
+                  },
+                ),
+              );
+            }));
   }
 }
