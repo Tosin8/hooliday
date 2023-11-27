@@ -22,7 +22,17 @@ class CalendarPopupView extends StatefulWidget {
   State<CalendarPopupView> createState() => _CalendarPopupViewState();
 }
 
-class _CalendarPopupViewState extends State<CalendarPopupView> {
+class _CalendarPopupViewState extends State<CalendarPopupView>
+    with TickerProviderStateMixin {
+  late final DateTime startDate;
+  late final DateTime endDate;
+  late final AnimationController animationController;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
