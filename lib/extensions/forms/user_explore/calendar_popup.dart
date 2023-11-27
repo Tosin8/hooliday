@@ -33,8 +33,8 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
   void initState() {
     // TODO: implement initState
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 400));
     startDate = widget.initialStartDate;
     endDate = widget.initialEndDate;
     animationController.forward();
@@ -57,7 +57,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
             builder: (BuildContext context, _) {
               return AnimatedOpacity(
                 opacity: animationController.value,
-                duration: Duration(milliseconds: 100),
+                duration: const Duration(milliseconds: 100),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -70,18 +70,43 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                   },
                   child: Center(
                     child: Padding(
-                      padding: EdgeInsets.all(24.0),
+                      padding: const EdgeInsets.all(24.0),
                       child: Container(
                         decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius:
-                                BorderRadius.all(Radius.circular(24.0)),
+                                const BorderRadius.all(Radius.circular(24.0)),
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.grey.withOpacity(0.2),
                                   offset: const Offset(4, 4),
                                   blurRadius: 8.0)
                             ]),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'From',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w100,
+                                          color: Colors.grey.withOpacity(0.8)),
+                                    )
+                                  ],
+                                ))
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
