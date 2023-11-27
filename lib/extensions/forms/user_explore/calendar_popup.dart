@@ -68,6 +68,23 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                       Navigator.pop(context);
                     }
                   },
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(24.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(24.0)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.withOpacity(0.2),
+                                  offset: const Offset(4, 4),
+                                  blurRadius: 8.0)
+                            ]),
+                      ),
+                    ),
+                  ),
                 ),
               );
             }));
