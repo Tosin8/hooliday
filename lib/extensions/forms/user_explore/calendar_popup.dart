@@ -47,6 +47,9 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: EdgeInsets.zero,
+        child: AnimatedBuilder(animation: animation, builder: builder));
   }
 }
