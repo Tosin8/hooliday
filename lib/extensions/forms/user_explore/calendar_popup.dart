@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CalendarPopupView extends StatefulWidget {
-  const CalendarPopupView({super.key});
+  const CalendarPopupView(
+      {this.initialStartDate,
+      this.initialEndDate,
+      this.onApplyClick,
+      this.onCancelClick,
+      this.minimumDate,
+      this.maximumDate,
+      this.barrierDismissible = true,
+      super.key});
 
   @override
   State<CalendarPopupView> createState() => _CalendarPopupViewState();
