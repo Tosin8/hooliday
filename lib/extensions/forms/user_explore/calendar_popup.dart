@@ -100,7 +100,15 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                           fontSize: 16,
                                           fontWeight: FontWeight.w100,
                                           color: Colors.grey.withOpacity(0.8)),
-                                    )
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      DateFormat('EEE, dd MMM')
+                                          .format(startDate),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
                                   ],
                                 ))
                               ],
