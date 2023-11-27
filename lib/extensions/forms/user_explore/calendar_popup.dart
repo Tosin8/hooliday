@@ -101,17 +101,46 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                           fontWeight: FontWeight.w100,
                                           color: Colors.grey.withOpacity(0.8)),
                                     ),
-                                    SizedBox(height: 4),
+                                    const SizedBox(height: 4),
                                     Text(
                                       DateFormat('EEE, dd MMM')
                                           .format(startDate),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 16),
                                     ),
                                   ],
+                                )),
+                                Container(
+                                    height: 74,
+                                    width: 1,
+                                    color: Colors.lightBlue),
+                                Expanded(
+                                    child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'To',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w100,
+                                          color: Colors.grey.withOpacity(0.8)),
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      DateFormat('EEE, dd MMM').format(endDate),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    )
+                                  ],
                                 ))
                               ],
+                            ),
+                            const Divider(height: 1),
+                            CustomCalendarView(
+                              minimumDate: widget.minimumDate,
+                              maximumDate: widget.maximumDate,
                             )
                           ],
                         ),
