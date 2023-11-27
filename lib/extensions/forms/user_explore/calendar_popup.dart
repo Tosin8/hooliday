@@ -39,6 +39,13 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }
