@@ -212,8 +212,19 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                                   final DateTime? minimumDate = widget.minimumDate;
                                   final DateTime? maximumDate = widget.maximumDate;
                                   if(minimumDate != null && maximumDate != null) {
-                                    final DateTime newminimumDate = DateTime(minimumDate.year, minimumDate.month, minimumDate.day - 1);
-                                    final DateTime newmaximumDate = DateTime(maximumDate.year, maximumDate.month, maximumDate.day - 1);
+                                    final DateTime newminimumDate = DateTime(
+                                      minimumDate.year,
+                                       minimumDate.month, 
+                                       minimumDate.day - 1);
+                                    final DateTime newmaximumDate = DateTime(
+                                      maximumDate.year, 
+                                      maximumDate.month, 
+                                      maximumDate.day + 1);
+                                      if(date.isAfter(newminimumDate) && 
+                                      date.isBefore(newmaximumDate)) {
+                                        onDateClick(date);
+
+                                      }
                                 }
                               },
                             )
