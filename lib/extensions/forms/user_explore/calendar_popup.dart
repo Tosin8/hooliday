@@ -151,7 +151,47 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                       endDate = endDateData;
                                     });
                                   }
-                                })
+                                }),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 16, right: 16, bottom: 16, top: 8),
+                              child: Container(
+                                height: 48,
+                                decoration: BoxDecoration(
+                                    color: Colors.blueAccent,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(24.0),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.grey.withOpacity(0.6),
+                                          blurRadius: 8,
+                                          offset: Offset(4, 4))
+                                    ]),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(24.0)),
+                                    highlightColor: Colors.transparent,
+                                    onTap: () {
+                                      try {
+                                        widget.onApplyClick(startDate, endDate);
+                                        Navigator.pop(context);
+                                      } catch (_) {}
+                                    },
+                                    child: Center(
+                                        child: Text(
+                                      'Apply',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18,
+                                          color: Colors.white),
+                                    )),
+                                  ),
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
