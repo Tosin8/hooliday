@@ -305,5 +305,25 @@ return noList;
   bool getIsInRange(DateTime date){
     if(startDate !=null && endDate !=null) {
       if(date.isAfter(startDate!) && date.isBefore(endDate!)) {
+        return true;
     }
   }
+  return false; 
+  } 
+
+ bool getIsItStartAndEndDate(DateTime date){
+  if((startDate != null && 
+  startDate!.day == date.day && 
+  startDate!.month == date.month &&
+  startDate!.year == date.year) || 
+  (endDate != null && 
+  endDate!.day == date.day &&
+  endDate!.month == date.month &&
+  endDate!.year == date.year)) return true; 
+  return false;
+ }
+ bool isStartDateRadius(DateTime date) {
+  if (startDate != null && 
+  startDate!.day == date.day &&
+  startDate!.month == date.month )
+ }
