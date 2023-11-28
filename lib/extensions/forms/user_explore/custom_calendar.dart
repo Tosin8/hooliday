@@ -58,6 +58,8 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Material(
+      child: Column(children: [Padding(padding: padding)]),
+    );
   }
 }
