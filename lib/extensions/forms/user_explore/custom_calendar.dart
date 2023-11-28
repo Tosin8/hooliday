@@ -254,13 +254,56 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
 
                                     ] : null, 
                                   ),
-                                  child: Center(),
+                                  child: Center(
+                                    child: Text('${date.day}', 
+                                    style: TextStyle(
+                                      color: getIsItStartAndEndDate(date) ? Colors.white : currentMonthDate.month == date.month ?
+                                     Colors.black : Colors.grey.withOpacity(0.6), 
+                                    fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16, 
+                                    fontWeight: getIsItStartAndEndDate(date) 
+                                    ? FontWeight.bold : FontWeight.normal),
+                                    )
+                                  ),
                                 ),),
                               
-                            )
+                            ), 
+                            Positioned(
+                              bottom: 9,
+                               right: 0,
+                                left: 0, 
+                              child: Container(
+                                height: 6, 
+                                width: 6, 
+                                decoration: BoxDecoration(
+                                  color: DateTime.now().day == date.day && 
+                                  DateTime.now().month == date.month && 
+                                  DateTime.now().year == date.year ? 
+                                  getIsInRange(date) 
+                                  ? Colors.white 
+                                  : HotelAppTheme.buildLightTheme().primaryColor 
+                                  : Colors.transparent, 
+                                  shape: BoxShape.circle),
+                                  ), 
+                                  ), 
             ],
-          ),))
-        );
+          ),
+          ), 
+          ), 
+          );
+        count += 1; 
   }
+  noList.add(
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center, 
+      mainAxisSize: MainAxisSize.min, 
+      children: listUI,
+      ));
 }
-  
+return noList; 
+  }
+
+  bool getIsInRange(DateTime date){
+    if(startDate !=null && endDate !=null) {
+      if(date.isAfter(startDate!) && date.isBefore(endDate!)) {
+    }
+  }
