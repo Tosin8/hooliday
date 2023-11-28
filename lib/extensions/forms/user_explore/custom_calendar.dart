@@ -192,7 +192,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                         child: Container(
                           decoration: BoxDecoration(
                             color: startDate != null && endDate != null ? getIsItStartAndEndDate(date) || 
-                            getIsInRange(date) ? Colors.blue.withOpacity(0.4) 
+                            getIsInRange(date) ? HotelAppTheme.buildLightTheme().primaryColor.withOpacity(0.4)
                             : Colors.transparent : Colors.transparent,
                             borderRadius: BorderRadius.only(
                               bottomLeft: isStartDateRadius(date) 
@@ -228,8 +228,35 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                                         onDateClick(date);
 
                                       }
-                                }
-                              },
+                                  }
+                                  else if (minimumDate != null){
+                                    final DateTime newmaxmimumDate = DateTime(
+                                      minimumDate.year, 
+                                      maximumDate.month, 
+                                      maximumDate.day + 1); 
+                                      if(date.isBefore(newmaxmimumDate)){
+                                        onDateClick(date); 
+                                      }
+                                  }
+                                  else {
+                                    onDateClick(date); 
+                                  }
+                                    
+                                  }
+                                }, 
+                                child: Padding(padding: EdgeInsets.all(2), 
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: getIsItStartAndEndDate(date) ? HotelAppTheme.buildLightTheme().primaryColor : Colors.transparent, 
+                                    borderRadius: BorderRadius.all(Radius.circular(32.0)), 
+                                    border: Border.all(color: getIsItStartAndEndDate(date) ? Colors.white : Colors.transparent, width: 2 ), boxShadow: getIsItStartAndEndDate(date) ? 
+                                     [ BoxShadow(color: Colors.grey.withOpacity(0.6), blurRadius: 4)
+
+                                    ] : null, 
+                                  ),
+                                  child: Center(),
+                                ),),
+                              
                             )
             ],
           ),))
