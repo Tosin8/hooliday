@@ -170,8 +170,54 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
       for (int i = 0; i< 7; i++) {
         final DateTime date = dateList[count]; 
         listUI.add(
-          Expanded(child: AspectRatio(aspectRatio: 1.0, child: Stack(
-            children: [],
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 1.0, 
+              child: Stack(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 3, 
+                  bottom: 3
+                  ),
+                   child: Padding(
+                    padding: EdgeInsets.only(
+                      top: 2,
+                       bottom: 2, 
+                       left: isStartDateRadius(date) ? 4:0, 
+                       right: isEndDateRadius(date) ? 4: 0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: startDate != null && endDate != null ? getIsItStartAndEndDate(date) || 
+                            getIsInRange(date) ? Colors.blue.withOpacity(0.4) 
+                            : Colors.transparent : Colors.transparent,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: isStartDateRadius(date) 
+                              ? const Radius.circular(24.0) 
+                              : const Radius.circular(0.0), 
+                              topLeft: isStartDateRadius(date) 
+                              ? const Radius.circular(24.0)
+                              : const Radius.circular(0.0), 
+                              topRight: isEndDateRadius(date) 
+                              ? const Radius.circular(24.0) : const Radius.circular(0.0), 
+                            ), 
+                            ),
+                            ),
+                            ),
+                            ),
+                            InkWell(
+                              borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                              onTap:() {
+                                if(currentMonthDate.month == date.month) {
+                                  final DateTime? minimumDate = widget.minimumDate;
+                                  final DateTime? maximumDate = widget.maximumDate;
+                                  if(minimumDate != null && maximumDate != null) {
+                                    final DateTime newminimumDate = DateTime(minimumDate.year, minimumDate.month, minimumDate.day - 1);
+                                    final DateTime newmaximumDate = DateTime(maximumDate.year, maximumDate.month, maximumDate.day - 1);
+                                }
+                              },
+                            )
+            ],
           ),))
         );
   }
