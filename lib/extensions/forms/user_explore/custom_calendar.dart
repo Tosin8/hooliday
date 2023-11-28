@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CustomCalendarView extends StatefulWidget {
   const CustomCalendarView(
@@ -61,19 +62,45 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
     return Material(
       child: Column(children: [
         Padding(
-          padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0, bottom: 4),
+          padding:
+              const EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0, bottom: 4),
           child: Row(
             children: [
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
                   height: 38,
                   width: 38,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(24.0)),
                       border: Border.all(color: Colors.blueAccent)),
+                  child: InkWell(
+                    borderRadius: const BorderRadius.all(Radius.circular(24.0)),
+                    onTap: () {
+                      if (mounted) {
+                        setState(() {
+                          currentMonthDate = DateTime(
+                              currentMonthDate.year, currentMonthDate.month, 0);
+                          setListOfDate(currentMonthDate);
+                        });
+                      }
+                    },
+                    child: const Icon(Icons.keyboard_arrow_left,
+                        color: Colors.grey),
+                  ),
                 ),
-              )
+              ),
+              Expanded(
+                  child: Center(
+                child: Text(
+                  DateFormat('MMMM, yyyy').format(currentMonthDate),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      color: Colors.black),
+                ),
+              ))
             ],
           ),
         )
