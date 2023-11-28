@@ -100,7 +100,17 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                       fontSize: 20,
                       color: Colors.black),
                 ),
-              ))
+              )),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 38,
+                  width: 38,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                      border: Border.all(color: Colors.blueAccent)),
+                ),
+              )
             ],
           ),
         )
