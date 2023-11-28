@@ -139,9 +139,19 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                             ),
                             const Divider(height: 1),
                             CustomCalendarView(
-                              minimumDate: widget.minimumDate,
-                              maximumDate: widget.maximumDate,
-                            )
+                                minimumDate: widget.minimumDate,
+                                maximumDate: widget.maximumDate,
+                                initialEndDate: widget.initialEndDate,
+                                initialStartDate: widget.initialStartDate,
+                                startEndDateChange: (DateTime startDateData,
+                                    DateTime endDateData) {
+                                  if (mounted) {
+                                    setState(() {
+                                      startDate = startDateData;
+                                      endDate = endDateData;
+                                    });
+                                  }
+                                })
                           ],
                         ),
                       ),
