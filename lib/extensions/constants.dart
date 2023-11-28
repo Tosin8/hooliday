@@ -25,6 +25,27 @@ class HotelAppTheme {
     const String fontName = 'WorkSans';
     return base.copyWith(
       displayLarge: base.displayLarge?.copyWith(fontFamily: fontName),
+      displayMedium: base.displayMedium?.copyWith(fontFamily: fontName),
+      displaySmall: base.displaySmall?.copyWith(fontFamily: fontName),
+      headlineMedium: base.headlineMedium?.copyWith(fontFamily: fontName),
+      headlineSmall: base.headlineSmall?.copyWith(fontFamily: fontName),
+      titleLarge: base.titleLarge?.copyWith(fontFamily: fontName),
+      labelLarge: base.labelLarge?.copyWith(fontFamily: fontName),
+      bodySmall: base.bodySmall?.copyWith(fontFamily: fontName),
+      bodyLarge: base.bodyLarge?.copyWith(fontFamily: fontName),
+      bodyMedium: base.bodyMedium?.copyWith(fontFamily: fontName),
+      titleMedium: base.titleMedium?.copyWith(fontFamily: fontName),
+      titleSmall: base.titleSmall?.copyWith(fontFamily: fontName),
+      labelSmall: base.labelSmall?.copyWith(fontFamily: fontName),
     );
+  }
+
+  static ThemeData buildLightTheme() {
+    const Color primaryColor = Color(0xff54d3c2);
+    const Color secondaryColor = Color(0xff54d3c2);
+    final ColorScheme colorScheme = const ColorScheme.light().copyWith(
+      primary: primaryColor,
+      secondary: secondaryColor,
+    ); 
   }
 }
