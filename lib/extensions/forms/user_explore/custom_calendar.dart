@@ -76,7 +76,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                     decoration: BoxDecoration(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(24.0)),
-                        border: Border.all(color: HotelAppTheme.buildLightTheme().dividerColor)),
+                        border: Border.all(
+                            color:
+                                HotelAppTheme.buildLightTheme().dividerColor)),
                     child: InkWell(
                       borderRadius:
                           const BorderRadius.all(Radius.circular(24.0)),
@@ -111,9 +113,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                     width: 38,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(24.0)),
-                        border: Border.all(color: HotelAppTheme.buildLightTheme().dividerColor,
-                        
-                    )),
+                        border: Border.all(
+                          color: HotelAppTheme.buildLightTheme().dividerColor,
+                        )),
                     child: InkWell(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)),
                       onTap: () {
@@ -167,163 +169,249 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
 
   List<Widget> getDaysNoUI() {
     final List<Widget> noList = <Widget>[];
-    int count = 0; 
-    for(int i = 0; i < dateList.length /7 ; i++) {
+    int count = 0;
+    for (int i = 0; i < dateList.length / 7; i++) {
       final List<Widget> listUI = <Widget>[];
-      for (int i = 0; i< 7; i++) {
-        final DateTime date = dateList[count]; 
+      for (int i = 0; i < 7; i++) {
+        final DateTime date = dateList[count];
         listUI.add(
           Expanded(
             child: AspectRatio(
-              aspectRatio: 1.0, 
+              aspectRatio: 1.0,
               child: Stack(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 3, 
-                  bottom: 3
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 3, bottom: 3),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 2,
+                          bottom: 2,
+                          left: isStartDateRadius(date) ? 4 : 0,
+                          right: isEndDateRadius(date) ? 4 : 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: startDate != null && endDate != null
+                              ? getIsItStartAndEndDate(date) ||
+                                      getIsInRange(date)
+                                  ? HotelAppTheme.buildLightTheme()
+                                      .primaryColor
+                                      .withOpacity(0.4)
+                                  : Colors.transparent
+                              : Colors.transparent,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: isStartDateRadius(date)
+                                ? const Radius.circular(24.0)
+                                : const Radius.circular(0.0),
+                            topLeft: isStartDateRadius(date)
+                                ? const Radius.circular(24.0)
+                                : const Radius.circular(0.0),
+                            topRight: isEndDateRadius(date)
+                                ? const Radius.circular(24.0)
+                                : const Radius.circular(0.0),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                   child: Padding(
-                    padding: EdgeInsets.only(
-                      top: 2,
-                       bottom: 2, 
-                       left: isStartDateRadius(date) ? 4:0, 
-                       right: isEndDateRadius(date) ? 4: 0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: startDate != null && endDate != null ? getIsItStartAndEndDate(date) || 
-                            getIsInRange(date) ? HotelAppTheme.buildLightTheme().primaryColor.withOpacity(0.4)
-                            : Colors.transparent : Colors.transparent,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: isStartDateRadius(date) 
-                              ? const Radius.circular(24.0) 
-                              : const Radius.circular(0.0), 
-                              topLeft: isStartDateRadius(date) 
-                              ? const Radius.circular(24.0)
-                              : const Radius.circular(0.0), 
-                              topRight: isEndDateRadius(date) 
-                              ? const Radius.circular(24.0) : const Radius.circular(0.0), 
-                            ), 
-                            ),
-                            ),
-                            ),
-                            ),
-                            InkWell(
-                              borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                              onTap:() {
-                                if(currentMonthDate.month == date.month) {
-                                  final DateTime? minimumDate = widget.minimumDate;
-                                  final DateTime? maximumDate = widget.maximumDate;
-                                  if(minimumDate != null && maximumDate != null) {
-                                    final DateTime newminimumDate = DateTime(
-                                      minimumDate.year,
-                                       minimumDate.month, 
-                                       minimumDate.day - 1);
-                                    final DateTime newmaximumDate = DateTime(
-                                      maximumDate.year, 
-                                      maximumDate.month, 
-                                      maximumDate.day + 1);
-                                      if(date.isAfter(newminimumDate) && 
-                                      date.isBefore(newmaximumDate)) {
-                                        onDateClick(date);
-
-                                      }
-                                  }
-                                  else if (minimumDate != null){
-                                    final DateTime newmaxmimumDate = DateTime(
-                                      minimumDate.year, 
-                                      maximumDate.month, 
-                                      maximumDate.day + 1); 
-                                      if(date.isBefore(newmaxmimumDate)){
-                                        onDateClick(date); 
-                                      }
-                                  }
-                                  else {
-                                    onDateClick(date); 
-                                  }
-                                    
-                                  }
-                                }, 
-                                child: Padding(padding: EdgeInsets.all(2), 
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: getIsItStartAndEndDate(date) ? HotelAppTheme.buildLightTheme().primaryColor : Colors.transparent, 
-                                    borderRadius: BorderRadius.all(Radius.circular(32.0)), 
-                                    border: Border.all(color: getIsItStartAndEndDate(date) ? Colors.white : Colors.transparent, width: 2 ), boxShadow: getIsItStartAndEndDate(date) ? 
-                                     [ BoxShadow(color: Colors.grey.withOpacity(0.6), blurRadius: 4)
-
-                                    ] : null, 
-                                  ),
-                                  child: Center(
-                                    child: Text('${date.day}', 
-                                    style: TextStyle(
-                                      color: getIsItStartAndEndDate(date) ? Colors.white : currentMonthDate.month == date.month ?
-                                     Colors.black : Colors.grey.withOpacity(0.6), 
-                                    fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16, 
-                                    fontWeight: getIsItStartAndEndDate(date) 
-                                    ? FontWeight.bold : FontWeight.normal),
-                                    )
-                                  ),
-                                ),),
-                              
-                            ), 
-                            Positioned(
-                              bottom: 9,
-                               right: 0,
-                                left: 0, 
-                              child: Container(
-                                height: 6, 
-                                width: 6, 
-                                decoration: BoxDecoration(
-                                  color: DateTime.now().day == date.day && 
-                                  DateTime.now().month == date.month && 
-                                  DateTime.now().year == date.year ? 
-                                  getIsInRange(date) 
-                                  ? Colors.white 
-                                  : HotelAppTheme.buildLightTheme().primaryColor 
-                                  : Colors.transparent, 
-                                  shape: BoxShape.circle),
-                                  ), 
-                                  ), 
-            ],
+                  InkWell(
+                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                    onTap: () {
+                      if (currentMonthDate.month == date.month) {
+                        final DateTime? minimumDate = widget.minimumDate;
+                        final DateTime? maximumDate = widget.maximumDate;
+                        if (minimumDate != null && maximumDate != null) {
+                          final DateTime newminimumDate = DateTime(
+                              minimumDate.year,
+                              minimumDate.month,
+                              minimumDate.day - 1);
+                          final DateTime newmaximumDate = DateTime(
+                              maximumDate.year,
+                              maximumDate.month,
+                              maximumDate.day + 1);
+                          if (date.isAfter(newminimumDate) &&
+                              date.isBefore(newmaximumDate)) {
+                            onDateClick(date);
+                          }
+                        } else if (minimumDate != null) {
+                          final DateTime newmimumDate = DateTime(
+                              minimumDate.year,
+                              minimumDate.month,
+                              minimumDate.day - 1);
+                          if (date.isAfter(newmimumDate)) {
+                            onDateClick(date);
+                          }
+                        } else if (maximumDate != null) {
+                          final DateTime newmaximumDate = DateTime(
+                              maximumDate.year,
+                              maximumDate.month,
+                              maximumDate.day + 1);
+                          if (date.isBefore(newmaximumDate)) {
+                            onDateClick(date);
+                          }
+                        } else {
+                          onDateClick(date);
+                        }
+                      }
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: getIsItStartAndEndDate(date)
+                              ? HotelAppTheme.buildLightTheme().primaryColor
+                              : Colors.transparent,
+                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          border: Border.all(
+                              color: getIsItStartAndEndDate(date)
+                                  ? Colors.white
+                                  : Colors.transparent,
+                              width: 2),
+                          boxShadow: getIsItStartAndEndDate(date)
+                              ? [
+                                  BoxShadow(
+                                      color: Colors.grey.withOpacity(0.6),
+                                      blurRadius: 4)
+                                ]
+                              : null,
+                        ),
+                        child: Center(
+                            child: Text(
+                          '${date.day}',
+                          style: TextStyle(
+                              color: getIsItStartAndEndDate(date)
+                                  ? Colors.white
+                                  : currentMonthDate.month == date.month
+                                      ? Colors.black
+                                      : Colors.grey.withOpacity(0.6),
+                              fontSize: MediaQuery.of(context).size.width > 360
+                                  ? 18
+                                  : 16,
+                              fontWeight: getIsItStartAndEndDate(date)
+                                  ? FontWeight.bold
+                                  : FontWeight.normal),
+                        )),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 9,
+                    right: 0,
+                    left: 0,
+                    child: Container(
+                      height: 6,
+                      width: 6,
+                      decoration: BoxDecoration(
+                          color: DateTime.now().day == date.day &&
+                                  DateTime.now().month == date.month &&
+                                  DateTime.now().year == date.year
+                              ? getIsInRange(date)
+                                  ? Colors.white
+                                  : HotelAppTheme.buildLightTheme().primaryColor
+                              : Colors.transparent,
+                          shape: BoxShape.circle),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-          ), 
-          ), 
-          );
-        count += 1; 
-  }
-  noList.add(
-    Row(
-      mainAxisAlignment: MainAxisAlignment.center, 
-      mainAxisSize: MainAxisSize.min, 
-      children: listUI,
+        );
+        count += 1;
+      }
+      noList.add(Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: listUI,
       ));
-}
-return noList; 
+    }
+    return noList;
   }
 
-  bool getIsInRange(DateTime date){
-    if(startDate !=null && endDate !=null) {
-      if(date.isAfter(startDate!) && date.isBefore(endDate!)) {
+  bool getIsInRange(DateTime date) {
+    if (startDate != null && endDate != null) {
+      if (date.isAfter(startDate!) && date.isBefore(endDate!)) {
         return true;
+      }
+    }
+    return false;
+  }
+
+  bool getIsItStartAndEndDate(DateTime date) {
+    if ((startDate != null &&
+            startDate!.day == date.day &&
+            startDate!.month == date.month &&
+            startDate!.year == date.year) ||
+        (endDate != null &&
+            endDate!.day == date.day &&
+            endDate!.month == date.month &&
+            endDate!.year == date.year)) return true;
+    return false;
+  }
+
+  bool isStartDateRadius(DateTime date) {
+    if (startDate != null &&
+        startDate!.day == date.day &&
+        startDate!.month == date.month) {
+      return true;
+    } else if (date.weekday == 1) {
+      return true;
+    } else {
+      return false;
     }
   }
-  return false; 
-  } 
 
- bool getIsItStartAndEndDate(DateTime date){
-  if((startDate != null && 
-  startDate!.day == date.day && 
-  startDate!.month == date.month &&
-  startDate!.year == date.year) || 
-  (endDate != null && 
-  endDate!.day == date.day &&
-  endDate!.month == date.month &&
-  endDate!.year == date.year)) return true; 
-  return false;
- }
- bool isStartDateRadius(DateTime date) {
-  if (startDate != null && 
-  startDate!.day == date.day &&
-  startDate!.month == date.month )
- }
+  bool isEndDateRadius(DateTime date) {
+    if (endDate != null &&
+        endDate!.day == date.day &&
+        endDate!.month == date.month) {
+      return true;
+    } else if (date.weekday == 7) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool onDateClick(DateTime date) {
+    if (startDate == null) {
+      startDate = date;
+    } else if (startDate != date && endDate == null) {
+      endDate = date;
+    } else if (startDate!.day == date.day && startDate!.month == date.month) {
+      startDate = null;
+    } else if (endDate != null &&
+        endDate!.day == date.day &&
+        endDate!.month == date.month) {
+      endDate = null;
+    }
+    if (startDate != null && endDate != null) {
+      startDate = endDate;
+      endDate = null;
+    }
+    if (startDate != null && endDate != null) {
+      if (!endDate!.isAfter(startDate!)) {
+        final DateTime d = startDate!;
+        startDate = endDate;
+        endDate = d;
+      }
+      if (date.isBefore(startDate!)) {
+        startDate = date;
+      } else if (date.isAfter(endDate!)) {
+        endDate = date;
+      } else {
+        final int daysToStartDate = startDate!.difference(date).inDays.abs();
+        final int daysToEndDate = endDate!.difference(date).inDays.abs();
+        daysToStartDate > daysToEndDate ? endDate = date : startDate = date;
+      }
+    }
+    if (mounted) {
+      setState(() {
+        if (startDate != null && endDate != null) {
+          try {
+            widget.startEndDateChange(startDate!, endDate!);
+          } catch (_) {}
+        }
+      });
+    }
+  }
+}
