@@ -1,9 +1,9 @@
 // useMaterial3: true,
 import 'package:flutter/material.dart';
 
-var primaryColor = Color(0xFF3Ebace);
-var hintColor = Color(0xffd8ecf1);
-var scaffoldBackgroundColor = Color(0xfff3f5f7);
+var primaryColor = const Color(0xFF3Ebace);
+var hintColor = const Color(0xffd8ecf1);
+var scaffoldBackgroundColor = const Color(0xfff3f5f7);
 
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
@@ -54,14 +54,14 @@ class HotelAppTheme {
         splashColor: Colors.white24,
         splashFactory: InkRipple.splashFactory,
         canvasColor: Colors.white,
-        scaffoldBackgroundColor: Color(0xfff6f6f6),
+        scaffoldBackgroundColor: const Color(0xfff6f6f6),
         buttonTheme: ButtonThemeData(
             colorScheme: colorScheme, textTheme: ButtonTextTheme.primary),
         textTheme: _buildTextTheme(base.textTheme),
         primaryTextTheme: _buildTextTheme(base.primaryTextTheme),
         platform: TargetPlatform.android,
         colorScheme: colorScheme
-            .copyWith(background: Color(0xfffffff))
-            .copyWith(error: Color(0xffb00020)));
+            .copyWith(background: const Color(0xffffffff))
+            .copyWith(error: const Color(0xffb00020)));
   }
 }
