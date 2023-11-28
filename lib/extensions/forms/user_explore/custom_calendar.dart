@@ -60,61 +60,107 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(children: [
-        Padding(
-          padding:
-              const EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0, bottom: 4),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 38,
-                  width: 38,
-                  decoration: BoxDecoration(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+                left: 8.0, right: 8.0, top: 4.0, bottom: 4),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 38,
+                    width: 38,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(24.0)),
+                        border: Border.all(color: Colors.blueAccent)),
+                    child: InkWell(
                       borderRadius:
                           const BorderRadius.all(Radius.circular(24.0)),
-                      border: Border.all(color: Colors.blueAccent)),
-                  child: InkWell(
-                    borderRadius: const BorderRadius.all(Radius.circular(24.0)),
-                    onTap: () {
-                      if (mounted) {
-                        setState(() {
-                          currentMonthDate = DateTime(
-                              currentMonthDate.year, currentMonthDate.month, 0);
-                          setListOfDate(currentMonthDate);
-                        });
-                      }
-                    },
-                    child: const Icon(Icons.keyboard_arrow_left,
-                        color: Colors.grey),
+                      onTap: () {
+                        if (mounted) {
+                          setState(() {
+                            currentMonthDate = DateTime(currentMonthDate.year,
+                                currentMonthDate.month, 0);
+                            setListOfDate(currentMonthDate);
+                          });
+                        }
+                      },
+                      child: const Icon(Icons.keyboard_arrow_left,
+                          color: Colors.grey),
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                  child: Center(
-                child: Text(
-                  DateFormat('MMMM, yyyy').format(currentMonthDate),
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      color: Colors.black),
-                ),
-              )),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 38,
-                  width: 38,
-                  decoration: BoxDecoration(
+                Expanded(
+                    child: Center(
+                  child: Text(
+                    DateFormat('MMMM, yyyy').format(currentMonthDate),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: Colors.black),
+                  ),
+                )),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 38,
+                    width: 38,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                        border: Border.all(color: Colors.blueAccent)),
+                    child: InkWell(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)),
-                      border: Border.all(color: Colors.blueAccent)),
-                ),
-              )
-            ],
+                      onTap: () {
+                        if (mounted) {
+                          setState(() {
+                            currentMonthDate = DateTime(currentMonthDate.year,
+                                currentMonthDate.month + 2, 0);
+                            setListOfDate(currentMonthDate);
+                          });
+                        }
+                      },
+                      child:
+                          Icon(Icons.keyboard_arrow_right, color: Colors.grey),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
-        )
-      ]),
+          Padding(
+            padding: const EdgeInsets.only(right: 8, left: 8, bottom: 8),
+            child: Row(
+              children: getDaysNameUI(),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 8, left: 8),
+            child: Column(
+              children: getDaysNoUI(),
+            ),
+          )
+        ],
+      ),
     );
   }
+
+  List<Widget> getDaysNameUI() {
+    final List<Widget> listUI = <Widget>[];
+    for (int i = 0; i < 7; i++) {
+      listUI.add(Expanded(
+          child: Center(
+        child: Text(
+          DateFormat('EEE').format(dateList[i]),
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.w500, color: Colors.blue),
+        ),
+      )));
+    }
+    return listUI;
+  }
+
+  List<Widget> getDaysNoUI() {}
 }
