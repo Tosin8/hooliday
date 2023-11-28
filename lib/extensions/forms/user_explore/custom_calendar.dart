@@ -162,5 +162,18 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
     return listUI;
   }
 
-  List<Widget> getDaysNoUI() {}
+  List<Widget> getDaysNoUI() {
+    final List<Widget> noList = <Widget>[];
+    int count = 0; 
+    for(int i = 0; i < dateList.length /7 ; i++) {
+      final List<Widget> listUI = <Widget>[];
+      for (int i = 0; i< 7; i++) {
+        final DateTime date = dateList[count]; 
+        listUI.add(
+          Expanded(child: AspectRatio(aspectRatio: 1.0, child: Stack(
+            children: [],
+          ),))
+        );
+  }
 }
+  
