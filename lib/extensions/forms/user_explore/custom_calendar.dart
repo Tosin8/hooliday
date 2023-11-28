@@ -59,7 +59,25 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(children: [Padding(padding: padding)]),
+      child: Column(children: [
+        Padding(
+          padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0, bottom: 4),
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  height: 38,
+                  width: 38,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                      border: Border.all(color: Colors.blueAccent)),
+                ),
+              )
+            ],
+          ),
+        )
+      ]),
     );
   }
 }
