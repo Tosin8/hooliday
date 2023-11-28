@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/extensions/constants.dart';
 import 'package:intl/intl.dart';
 
 class CustomCalendarView extends StatefulWidget {
@@ -75,7 +76,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                     decoration: BoxDecoration(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(24.0)),
-                        border: Border.all(color: Colors.blueAccent)),
+                        border: Border.all(color: HotelAppTheme.buildLightTheme().dividerColor)),
                     child: InkWell(
                       borderRadius:
                           const BorderRadius.all(Radius.circular(24.0)),
@@ -110,7 +111,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                     width: 38,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(24.0)),
-                        border: Border.all(color: Colors.blueAccent)),
+                        border: Border.all(color: HotelAppTheme.buildLightTheme().dividerColor,
+                        
+                    )),
                     child: InkWell(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)),
                       onTap: () {
