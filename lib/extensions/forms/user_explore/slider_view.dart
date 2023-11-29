@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:hooliday/extensions/constants.dart';
 
@@ -72,17 +70,17 @@ class _SliderViewState extends State<SliderView> {
 
 class CustomThumbShape extends SliderComponentShape {
   static const double _thumbSize = 3.0;
-  static const double _disabledThumSize = 3.0;
+  static const double _disabledThumbSize = 3.0;
 
   @override
   Size getPreferredSize(bool isEnabled, bool isDiscrete) {
     return isEnabled
         ? const Size.fromRadius(_thumbSize)
-        : const Size.fromRadius(_disabledThumSize);
+        : const Size.fromRadius(_disabledThumbSize);
   }
 
   static final Animatable<double> sizeTween =
-      Tween<double>(begin: _disabledThumSize, end: _thumbSize);
+      Tween<double>(begin: _disabledThumbSize, end: _thumbSize);
 }
 
 @override
@@ -102,16 +100,18 @@ void paint(
 }) {
   final Canvas canvas = context.canvas;
   final ColorTween colorTween = ColorTween(
-      begin: sliderTheme.disabledThumbColor, end: sliderTheme.thumbColor);
+    begin: sliderTheme.disabledThumbColor,
+    end: sliderTheme.thumbColor,
+  );
   canvas.drawPaint(
-      Path()
+      (Path()
         ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
             Offset(center.dx - 12, center.dy - 12)))
-        ..fillType = PathFillType.evenOdd,
+        ..fillType = PathFillType.evenOdd) as Paint,
       Paint()
         ..color = Colors.black.withOpacity(0.5)
         ..maskFilter =
-            MaskFilter.blur(BlurStyle.normal, ConvertRadiusToSigma(8)));
+            MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(8)));
 
   final Paint cPaint = Paint();
   cPaint.color = Colors.white;
