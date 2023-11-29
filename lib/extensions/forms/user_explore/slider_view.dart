@@ -104,10 +104,10 @@ void paint(
     end: sliderTheme.thumbColor,
   );
   canvas.drawPaint(
-      (Path()
+      Path()
         ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
             Offset(center.dx - 12, center.dy - 12)))
-        ..fillType = PathFillType.evenOdd) as Paint,
+        ..fillType = PathFillType.evenOdd,
       Paint()
         ..color = Colors.black.withOpacity(0.5)
         ..maskFilter =
