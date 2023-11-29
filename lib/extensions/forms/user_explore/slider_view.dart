@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:hooliday/extensions/constants.dart';
 
@@ -78,4 +80,36 @@ class CustomThumbShape extends SliderComponentShape {
         ? const Size.fromRadius(_thumbSize)
         : const Size.fromRadius(_disabledThumSize);
   }
+
+  static final Animatable<double> sizeTween =
+      Tween<double>(begin: _disabledThumSize, end: _thumbSize);
+}
+
+@override
+void paint(
+  PaintingContext context,
+  Offset center, {
+  required Animation<double> activationAnimation,
+  required Animation<double> enableAnimation,
+  required bool isDiscrete,
+  required TextPainter labelPainter,
+  required RenderBox parentBox,
+  required Size sizeWithOverflow,
+  required SliderThemeData sliderTheme,
+  required TextDirection textDirection,
+  required double textScaleFactor,
+  required double value,
+}) {
+  final Canvas canvas = context.canvas;
+  final ColorTween colorTween = ColorTween(
+      begin: sliderTheme.disabledThumbColor, end: sliderTheme.thumbColor);
+  canvas.drawPaint(
+      Path()
+        ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
+            Offset(center.dx - 12, center.dy - 12)))
+        ..fillType = PathFillType.evenOdd,
+      Paint()
+        ..color = Colors.black.withOpacity(0.5)
+        ..maskFilter =
+            MaskFilter.blur(BlurStyle.normal, ConvertRadiusToSigma(8)));
 }
