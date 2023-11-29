@@ -112,4 +112,15 @@ void paint(
         ..color = Colors.black.withOpacity(0.5)
         ..maskFilter =
             MaskFilter.blur(BlurStyle.normal, ConvertRadiusToSigma(8)));
+
+  final Paint cPaint = Paint();
+  cPaint.color = Colors.white;
+  cPaint.strokeWidth = 14 / 2;
+  canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
+  cPaint.color = colorTween.evaluate(enableAnimation) ?? Colors.white;
+  canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
+}
+
+double convertRadiusToSigma(double radius) {
+  return radius * 0.57735 + 0.5;
 }
