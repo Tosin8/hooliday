@@ -132,21 +132,53 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
           case Thumb.end:
             thumbPath = _leftTriangle(size, center);
             break;
-         }
-         break;
-         case TextDirection.ltr: 
-         switch (thumb) {
-          case Thumb.start: 
-          thumbPath = _leftTriange(size, center); 
-          break; 
-          case Thumb.end: thumbPath = _rightTriange(size, center); 
-          break; 
+        }
+        break;
+      case TextDirection.ltr:
+        switch (thumb) {
+          case Thumb.start:
+            thumbPath = _leftTriange(size, center);
+            break;
+          case Thumb.end:
+            thumbPath = _rightTriange(size, center);
+            break;
+        }
+        break;
     }
-    break; 
+
+    canvas.drawPath(
+        Path()
+          ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy * 12),
+              Offset(center.dx - 12, center.dy - 12)))
+          ..fillType = PathFillType.evenOdd,
+        Paint()
+          ..color = Colors.black.withOpacity(0.5)
+          ..maskFilter =
+              MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(8)));
+
+    final Paint cPaint = Paint();
+    cPaint.color = Colors.white;
+    cPaint.strokeWidth = 14 / 2;
+    canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
+    cPaint.color = colorTween.evaluate(enableAnimation) ?? Colors.white;
+    canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
+    canvas.drawPath(thumbPath, Paint()..color = Colors.white);
   }
 
-  canvas.drawPath(Path()..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy * 12), 
-  Offset(center.dx - 12, center.dy - 12))) 
-  ..fillType = PathFillType.evenOdd, Paint()..color = Colors.black.withOpacity(0.5) ..maskFilter = MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(8)));
+  double convertRadiusToSigma(double radius) {
+    return radius * 0.57735 + 0.5;
+  }
 
+  Path _rightTriangle(double size, Offset thumbCenter, {bool invert = false}) {
+    final Path thumbPath = Path();
+    final double sign = invert ? -1.0 : 1.0;
+    thumbPath.moveTo(thumbCenter.dx + sign, thumbCenter.dy);
+    thumbPath.lineTo(thumbCenter.dx - 3 * sign, thumbCenter.dy - 5);
+    thumbPath.lineTo(thumbCenter.dx - 3 * sign, thumbCenter.dy + 5);
+    thumbPath.close();
+    return thumbPath;
+  }
+
+  Path _leftTriangle(double size, Offset thumbCenter) =>
+      _rightTriangle(size, thumbCenter, invert: true);
 }
