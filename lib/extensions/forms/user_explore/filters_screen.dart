@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../constants.dart';
+import 'range_slider_view.dart';
+
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({super.key});
 
