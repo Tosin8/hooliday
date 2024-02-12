@@ -29,7 +29,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   DateTime? endDate;
   @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     setListOfDate(currentMonthDate);
     startDate = widget.initialStartDate;
@@ -38,7 +38,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
+    
     super.dispose();
   }
 
@@ -413,5 +413,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
         }
       });
     }
+    return false; 
   }
+  
 }

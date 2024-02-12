@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/extensions/constants.dart';
 import 'package:hooliday/extensions/forms/signup.dart';
 
-import '../../constant.dart';
+
 import '../forgotpass.dart';
 import 'login_widget.dart';
 
