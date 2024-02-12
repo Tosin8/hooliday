@@ -3,7 +3,7 @@ import 'package:hooliday/extensions/constants.dart';
 
 class SliderView extends StatefulWidget {
   const SliderView(
-      {required this.onChangedlistValue, required this.listValue, super.key});
+      {required this.onChangedlistValue, required this.listValue, super.key, required double distValue, required Null Function(double value) onChangedistValue});
 
   final Function(double) onChangedlistValue;
   final double listValue;
@@ -81,6 +81,11 @@ class CustomThumbShape extends SliderComponentShape {
 
   static final Animatable<double> sizeTween =
       Tween<double>(begin: _disabledThumbSize, end: _thumbSize);
+      
+        @override
+        void paint(PaintingContext context, Offset center, {required Animation<double> activationAnimation, required Animation<double> enableAnimation, required bool isDiscrete, required TextPainter labelPainter, required RenderBox parentBox, required SliderThemeData sliderTheme, required TextDirection textDirection, required double value, required double textScaleFactor, required Size sizeWithOverflow}) {
+          // TODO: implement paint
+        }
 }
 
 @override
@@ -104,10 +109,10 @@ void paint(
     end: sliderTheme.thumbColor,
   );
   canvas.drawPaint(
-      Path()
+      (Path()
         ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
             Offset(center.dx - 12, center.dy - 12)))
-        ..fillType = PathFillType.evenOdd,
+        ..fillType = PathFillType.evenOdd) as Paint,
       Paint()
         ..color = Colors.black.withOpacity(0.5)
         ..maskFilter =

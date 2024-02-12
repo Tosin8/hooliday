@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import 'range_slider_view.dart';
+import 'slider_view.dart';
 
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({super.key});
@@ -225,7 +227,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
           distValue: distValue,
           onChangedistValue: (double value) {
             distValue = value;
-          },
+          }, onChangedlistValue: (double ) {  }, listValue: null,
         ),
         const SizedBox(
           height: 8,
