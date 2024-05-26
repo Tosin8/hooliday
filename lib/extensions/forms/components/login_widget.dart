@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/extensions/constants.dart';
 import 'package:hooliday/screens/home_screen.dart';
 
-import '../../constant.dart';
+
 
 class FormButton extends StatelessWidget {
   const FormButton({
