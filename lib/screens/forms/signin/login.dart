@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/screens/forms/signin/widgets/body.dart';
 
 
 
@@ -13,7 +14,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: LoginBody(),
+      body: SignInBody(),
     );
   }
 }
