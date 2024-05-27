@@ -53,6 +53,8 @@ flutter:
     - assets/images/china_new_year.jpg
     - assets/images/oktober_fest.jpg
     - assets/images/diwali_fest.jpg
+    - assets/splash/
+    
 
   fonts:
     - family: Fleur De Leah
