@@ -13,6 +13,7 @@ dependencies:
   firebase_core: ^2.31.1
   flutter:
     sdk: flutter
+  flutter_image_slideshow: ^0.1.6
   font_awesome_flutter: ^10.6.0
   get: ^4.6.6
   intl: ^0.18.1
@@ -54,7 +55,6 @@ flutter:
     - assets/images/oktober_fest.jpg
     - assets/images/diwali_fest.jpg
     - assets/splash/
-    
 
   fonts:
     - family: Fleur De Leah

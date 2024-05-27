@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooliday/extensions/splash_screen.dart';
+import 'package:hooliday/screens/onboarding/onboard_screen.dart';
 
 
 
