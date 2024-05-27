@@ -1,0 +1,8 @@
+ flutter_native_splash: ^2.4.0
+    image: 'assets/splash.png'
+
+    android_12: 
+      image: assets/splash.png
+
+    web: false
+  
