@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         hintColor: Color(0xffd8ecf1),
         scaffoldBackgroundColor: Color(0xfff3f5f7),
       ),
-      home: SplashScreen(),
+      home: OnboardScreen(),
     );
   }
 }
