@@ -10,7 +10,7 @@ class SignInButton extends StatelessWidget {
                       child: Container(
                         height: 60, width: 300, 
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(30.0),
                           color: Colors.black
                         ),
                         child: const Align(child: Text('Login', style: TextStyle(color: Colors.white, 

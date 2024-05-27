@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:hooliday/screens/forms/signup/signup.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'button.dart';
+import 'buttons/google_button.dart';
+import 'buttons/login_button.dart';
 
 class SignInBody extends StatelessWidget {
   const SignInBody({super.key});
@@ -27,6 +30,8 @@ class SignInBody extends StatelessWidget {
                 color: Colors.grey, 
               fontSize: 15),), 
               const SizedBox(height: 20,), 
+
+
               Form(
                 child: Column(
                   children: [
@@ -72,10 +77,38 @@ suffixIcon: Icon(Iconsax.eye_slash),
                       hintStyle: TextStyle(color: Colors.grey)
                       ),
                     ), 
-                    const SizedBox(height: 50,), 
-
+                
+ const SizedBox(height: 10,), 
+                   
+                      TextButton(onPressed: (){}, 
+                      child: const Text('Forgot Password?', 
+                      
+                      style: TextStyle(color: Colors.black),
+                      
+                      )),
+                    
                     // Button. 
-                    SignInButton(), 
+                        const SizedBox(height: 30,), 
+                    const SignInButton(), 
+                    const SizedBox(height: 20,), 
+                    const Text('Or Continue With', 
+                    style: TextStyle(color: Colors.grey),), 
+                    const SizedBox(height: 20,), 
+
+                    // social media button.
+                    const GoogleButton(), 
+                    SizedBox(height: 10,), 
+                     Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+
+      const Text('Don\'t have an account?', style: TextStyle(color: Colors.grey),),
+
+      TextButton(onPressed: () {
+        Get.to(() => const SignUp());
+      },  child: const Text('Sign Up', style: TextStyle(color: Colors.black),))
+    ],
+  )
                     
                   ],
                 ),
