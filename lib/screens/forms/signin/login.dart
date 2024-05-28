@@ -41,7 +41,7 @@ class _SignInState extends State<SignIn> {
     return null;
   }
 
-  void _submitForm() {
+  Future<void> _submitForm() async{
     if (_formKey.currentState!.validate()) {
       // Perform the sign-in action
       String email = _emailController.text;
@@ -115,6 +115,8 @@ class _SignInState extends State<SignIn> {
           
                       // Password 
                       TextFormField(
+                        style: TextStyle(color: Colors.white),
+                      
 controller: _pwdController,
                         obscureText: true,
                         validator: _validatePassword,
@@ -122,9 +124,11 @@ controller: _pwdController,
                         keyboardType: TextInputType.visiblePassword,
                         textInputAction: TextInputAction.done,
                         decoration:  const InputDecoration(
+                          filled: true, 
+                          fillColor: Colors.black,
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-          prefixIcon: Icon(Iconsax.lock), 
-          suffixIcon: Icon(Iconsax.eye_slash),
+          prefixIcon: Icon(Iconsax.lock, color: Colors.white,), 
+          suffixIcon: Icon(Iconsax.eye_slash, color: Colors.white,),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                         ),
