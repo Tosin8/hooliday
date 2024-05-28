@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hooliday/screens/home_screen.dart';
 import 'package:iconsax/iconsax.dart';
 
 
@@ -20,6 +21,7 @@ class _SignInState extends State<SignIn> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pwdController = TextEditingController();
+  bool _isLoading = false; // Add this variable to track loading state
 
   String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -37,23 +39,41 @@ class _SignInState extends State<SignIn> {
     if (value == null || value.isEmpty) {
       return 'Please enter your password';
     }
+    if (value.length < 6) {
+      return 'Password must be at least 6 characters long';
+    }
+    String pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{6,}$';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
+      return 'Password must contain a letter, number and symbol';
+    }
     
     return null;
   }
 
   Future<void> _submitForm() async{
     if (_formKey.currentState!.validate()) {
+      setState(() {
+        _isLoading = true;
+      });
+
+      await Future.delayed(const Duration(seconds: 2)); // Simulate a delay of 2 seconds
+
+      setState(() {
+        _isLoading = false;
+      });
+      Get.to(() => const HomeScreen());
       // Perform the sign-in action
-      String email = _emailController.text;
-      String password = _pwdController.text;
+      // String email = _emailController.text;
+      // String password = _pwdController.text;
 
       // For demonstration purposes, we'll just show a snackbar with the entered values
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          elevation: 0,
-          behavior: SnackBarBehavior.floating,
-          content: Text('Email: $email\nPassword: $password')),
-      );
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   SnackBar(
+      //     elevation: 0,
+      //     behavior: SnackBarBehavior.floating,
+      //     content: Text('Email: $email\nPassword: $password')),
+      // );
     }
 
   }
@@ -89,7 +109,7 @@ class _SignInState extends State<SignIn> {
                       const SizedBox(height: 30,), 
                       // Email ID 
                       TextFormField(
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                         controller: _emailController, 
                         validator: _validateEmail,
                         keyboardType: TextInputType.emailAddress,
@@ -115,7 +135,7 @@ class _SignInState extends State<SignIn> {
           
                       // Password 
                       TextFormField(
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       
 controller: _pwdController,
                         obscureText: true,
@@ -130,6 +150,7 @@ controller: _pwdController,
           prefixIcon: Icon(Iconsax.lock, color: Colors.white,), 
           suffixIcon: Icon(Iconsax.eye_slash, color: Colors.white,),
                         border: OutlineInputBorder(
+                          
                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -143,28 +164,51 @@ controller: _pwdController,
                   
            const SizedBox(height: 10,), 
                      
-                        TextButton(onPressed: (){}, 
+                        TextButton(
+                          onPressed: (){}, 
                         child: const Text('Forgot Password?', 
                         
                         style: TextStyle(color: Colors.black),
                         
-                        )),
+                        )
+                        ),
                       
                       // Button. 
                           const SizedBox(height: 30,), 
                     GestureDetector( 
-                      onTap: _submitForm,
+                      onTap: _isLoading ? null : _submitForm,
                       child: Container(
                         height: 60, width: 300, 
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30.0),
                           color: Colors.black
                         ),
-                        child: const Align(child: Text('Login', style: TextStyle(color: Colors.white, 
-                        fontSize: 16),)),
+                        child: _isLoading
+                         ? const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                           children: [
+                            SizedBox(
+                              height: 20,
+                               width: 20,
+                                child: CircularProgressIndicator(color: Colors.white,strokeWidth: 2.0
+                                ),
+                                ), 
+                                
+                                SizedBox(width: 10,), 
+                                Text('Please Wait', style: TextStyle(color: Colors.white),), 
+                           ], 
+                         ): 
+                                Align(
+                                  child: const Text('Login',
+                                   style: TextStyle(color: Colors.white, 
+                                                          fontSize: 16),
+                                                          ),
+                                ),
+                        ),
                       ),
-                    ), 
-                      const SizedBox(height: 20,), 
+                  
+                
+                     const SizedBox(height: 20,), 
                       const Text('Or Continue With', 
                       style: TextStyle(color: Colors.grey),), 
                       const SizedBox(height: 20,), 
