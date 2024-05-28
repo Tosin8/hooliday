@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 
 import '../signup/signup.dart';
@@ -46,7 +47,7 @@ class _SignInState extends State<SignIn> {
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
-                      decoration:  InputDecoration(
+                      decoration:  const InputDecoration(
                         floatingLabelBehavior: FloatingLabelBehavior.always,
 prefixIcon: Icon(Iconsax.message), 
                       border: OutlineInputBorder(
@@ -68,7 +69,7 @@ const SizedBox(height: 20,),
                       obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
                       textInputAction: TextInputAction.done,
-                      decoration:  InputDecoration(
+                      decoration:  const InputDecoration(
                         floatingLabelBehavior: FloatingLabelBehavior.always,
 prefixIcon: Icon(Iconsax.lock), 
 suffixIcon: Icon(Iconsax.eye_slash),
@@ -103,7 +104,7 @@ suffixIcon: Icon(Iconsax.eye_slash),
 
                     // social media button.
                     const GoogleButton(), 
-                    SizedBox(height: 10,), 
+                    const SizedBox(height: 10,), 
                      Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
