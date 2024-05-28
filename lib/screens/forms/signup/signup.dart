@@ -6,11 +6,8 @@ import 'package:hooliday/screens/forms/signin/login.dart';
 import 'package:hooliday/screens/forms/verify.dart';
 import 'package:iconsax/iconsax.dart';
 
-
 import '../signin/widgets/buttons/google_button.dart';
 import '../signin/widgets/buttons/login_button.dart';
-
-
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -20,9 +17,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  final SignUpFormController controller = Get.put( SignUpFormController());
+  final SignUpFormController controller = Get.put(SignUpFormController());
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-    
+
   bool _isLoading = false; // Add this variable to track loading state
 
   // String? _validateEmail(String? value) {
@@ -49,17 +46,18 @@ class _SignUpState extends State<SignUp> {
   //   if (!regex.hasMatch(value)) {
   //     return 'Password must contain a letter, number and symbol';
   //   }
-    
+
   //   return null;
   // }
 
-  Future<void> _submitForm() async{
+  Future<void> _submitForm() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
       });
 
-      await Future.delayed(const Duration(seconds: 2)); // Simulate a delay of 2 seconds
+      await Future.delayed(
+          const Duration(seconds: 2)); // Simulate a delay of 2 seconds
 
       setState(() {
         _isLoading = false;
@@ -77,242 +75,302 @@ class _SignUpState extends State<SignUp> {
       //     content: Text('Email: $email\nPassword: $password')),
       // );
     }
-
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: FadeInLeft(
-          duration: const Duration(milliseconds: 1000), 
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start, 
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 50,), 
-                const Text('Hola, \nLet\'s get started', 
-                style: TextStyle(fontSize: 20, 
-                fontWeight: FontWeight.w600),
-                ), 
-                const SizedBox(height: 10,),
-                const Text('Kindly fill in your details below', style: TextStyle(
-                  color: Colors.grey, 
-                fontSize: 15),), 
-                const SizedBox(height: 10,), 
-          
-          
-                Form(
-                  key: _formKey, 
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 20,), 
+        body: SingleChildScrollView(
+      child: FadeInLeft(
+        duration: const Duration(milliseconds: 1000),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 50,
+              ),
+              const Text(
+                'Hola, \nLet\'s get started',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                'Kindly fill in your details below',
+                style: TextStyle(color: Colors.grey, fontSize: 15),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
 
-                      // Email ID 
-                      TextFormField(
-                        controller: controller.emailController, 
-                        validator: controller.validateEmail, 
-                        keyboardType: TextInputType.emailAddress,
-                        textInputAction: TextInputAction.next,
-                        decoration:  const InputDecoration(
+                    // Email ID
+                    TextFormField(
+                      controller: controller.emailController,
+                      validator: controller.validateEmail,
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                      decoration: const InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-          prefixIcon: Icon(Iconsax.message), 
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)), 
-                        ),
-          
-                        hintText: 'Email ID',
-                        hintStyle: TextStyle(color: Colors.grey)
-                        ),
-                      ), 
-          const SizedBox(height: 20,), 
-          
-          // first and last name. 
-           Row(
-             children: [
-               Expanded(
-                 child: TextFormField(
-                              keyboardType: TextInputType.emailAddress,
-                              textInputAction: TextInputAction.next,
-                              decoration:  const InputDecoration(
-                                floatingLabelBehavior: FloatingLabelBehavior.always,
-                           prefixIcon: Icon(Iconsax.user), 
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)), 
-                              ),
-                           
-                              hintText: 'First Name',
-                              hintStyle: TextStyle(color: Colors.grey)
-                              ),
-                            ),
-               ),
-                      SizedBox(width: 10,), 
-                          Expanded(child: TextFormField(
-                         
-                            keyboardType: TextInputType.emailAddress,
+                          prefixIcon: Icon(Iconsax.message),
+                          border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12.0)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12.0)),
+                          ),
+                          hintText: 'Email ID',
+                          hintStyle: TextStyle(color: Colors.grey)),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+
+                    // first and last name.
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            controller: controller.firstNameController,
+                            validator: controller.validateName,
+                            keyboardType: TextInputType.name,
                             textInputAction: TextInputAction.next,
-                            decoration:  const InputDecoration(
-                              floatingLabelBehavior: FloatingLabelBehavior.always,
-                         prefixIcon: Icon(Iconsax.user), 
+                            decoration: const InputDecoration(
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                prefixIcon: Icon(Iconsax.user),
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12.0)),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12.0)),
+                                ),
+                                hintText: 'First Name',
+                                hintStyle: TextStyle(color: Colors.grey)),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: TextFormField(
+                            controller: controller.lastNameController,
+                            validator: controller.validateName,
+                            keyboardType: TextInputType.name,
+                            textInputAction: TextInputAction.next,
+                            decoration: const InputDecoration(
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                prefixIcon: Icon(Iconsax.user),
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12.0)),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(12.0)),
+                                ),
+                                hintText: 'Last Name',
+                                hintStyle: TextStyle(color: Colors.grey)),
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+
+                    // Password
+                    Obx(
+                      () => TextFormField(
+                        controller: controller.passwordController,
+                        obscureText: controller.isPasswordHidden.value,
+                        validator: controller.validatePassword,
+                        keyboardType: TextInputType.visiblePassword,
+                        textInputAction: TextInputAction.next,
+                        decoration: InputDecoration(
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            prefixIcon: Icon(Iconsax.lock),
+                            suffixIcon: IconButton(
+                              icon: Icon(controller.isPasswordHidden.value
+                                  ? Iconsax.eye_slash
+                                  : Iconsax.eye),
+                              onPressed: () {
+                                controller.isPasswordHidden.value =
+                                    !controller.isPasswordHidden.value;
+                              },
+                            ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12.0)),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(12.0)), 
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12.0)),
                             ),
-                         
-                            hintText: 'Last Name',
-                            hintStyle: TextStyle(color: Colors.grey)
-                            ),
-                          ),)
-             ],
-           ), 
-          const SizedBox(height: 20,), 
-          
-                      // Password 
-                      TextFormField(
-                        obscureText: true,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.next,
-                        decoration:  const InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-          prefixIcon: Icon(Iconsax.lock), 
-          suffixIcon: Icon(Iconsax.eye_slash),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)), 
-                        ),
-          
-                        hintText: 'Password',
-                        hintStyle: TextStyle(color: Colors.grey)
-                        ),
-                      ), 
-                  
-           const SizedBox(height: 20,), 
+                            hintText: 'Password',
+                            hintStyle: TextStyle(color: Colors.grey)),
+                      ),
+                    ),
 
-  // Repeat Password 
-                      TextFormField(
-                        obscureText: true,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.next,
-                        decoration:  const InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-          prefixIcon: Icon(Iconsax.lock), 
-          suffixIcon: Icon(Iconsax.eye_slash),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)), 
-                        ),
-          
-                        hintText: 'Repeat Password',
-                        hintStyle: TextStyle(color: Colors.grey)
-                        ),
-                      ), 
-SizedBox(height: 20,), 
-                     
-                      // Phone Number 
-                      TextFormField(
-                        keyboardType: TextInputType.number,
-                        textInputAction: TextInputAction.next,
-                        decoration:  const InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-          prefixIcon: Icon(Icons.phone), 
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12.0)), 
-                        ),
-          
-                        hintText: 'Phone Number',
-                        hintStyle: TextStyle(color: Colors.grey)
-                        ),
-                      ), 
-          const SizedBox(height: 20,), 
-                      
-                      // Button. 
-                          const SizedBox(height: 10,), 
-                      
+                    const SizedBox(
+                      height: 20,
+                    ),
 
-                    GestureDetector( 
+                    // Repeat Password
+                    Obx(() => TextFormField(
+                      controller: controller.confirmPasswordController, 
+                      validator: controller.validateConfirmPassword, 
+                      
+                          obscureText: controller.isConfirmPasswordHidden.value,
+                          keyboardType: TextInputType.visiblePassword,
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              prefixIcon: Icon(Iconsax.lock),
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  controller.isConfirmPasswordHidden.value = !controller.isConfirmPasswordHidden.value;
+                                },
+                                icon: Icon(controller.isConfirmPasswordHidden.value ? Iconsax.eye_slash : Iconsax.eye)),
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(12.0)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(12.0)),
+                              ),
+                              hintText: 'Repeat Password',
+                              hintStyle: TextStyle(color: Colors.grey)),
+                        )),
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                    // Phone Number
+                    TextFormField(
+                      controller: controller.phoneNumberController, 
+                      validator: controller.validatePhoneNumber,
+                      keyboardType: TextInputType.phone,
+                      textInputAction: TextInputAction.next,
+                      decoration: const InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          prefixIcon: Icon(Icons.phone),
+                          border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12.0)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12.0)),
+                          ),
+                          hintText: 'Phone Number',
+                          hintStyle: TextStyle(color: Colors.grey)),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+
+                    // Button.
+                    const SizedBox(
+                      height: 10,
+                    ),
+
+                    GestureDetector(
                       onTap: _isLoading ? null : _submitForm,
                       child: Container(
-                        height: 60, width: 300, 
+                        height: 60,
+                        width: 300,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0),
-                          color: Colors.black
-                        ),
+                            borderRadius: BorderRadius.circular(30.0),
+                            color: Colors.black),
                         child: _isLoading
-                         ? const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                           children: [
-                            SizedBox(
-                              height: 20,
-                               width: 20,
-                                child: CircularProgressIndicator(color: Colors.black,strokeWidth: 2.0
+                            ? const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 20,
+                                    width: 20,
+                                    child: CircularProgressIndicator(
+                                        color: Colors.black, strokeWidth: 2.0),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    'Please Wait',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              )
+                            : Align(
+                                child: const Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16),
                                 ),
-                                ), 
-                                
-                                SizedBox(width: 10,), 
-                                Text('Please Wait', style: TextStyle(color: Colors.white),), 
-                           ], 
-                         ): 
-                                Align(
-                                  child: const Text('Sign Up',
-                                   style: TextStyle(color: Colors.white, 
-                                                          fontSize: 16),
-                                                          ),
-                                ),
-                        ),
+                              ),
                       ),
-                  
-                
-                      const SizedBox(height: 10,), 
-                      const Text('Or Continue With', 
-                      style: TextStyle(color: Colors.grey),), 
-                      const SizedBox(height: 10,), 
-          
-                      // social media button.
-                      const GoogleButton(), 
-                      const SizedBox(height: 5,), 
-                       Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-          
-                const Text('I have an account?', style: TextStyle(color: Colors.grey),),
-          
-                TextButton(onPressed: () {
-          Get.to(() => const SignIn());
-                },  child: const Text('Sign In', style: TextStyle(color: Colors.black),))
-              ],
-            )
-                      
-                    ],
-                  ),
-                ), 
-              ],
-            ),
+                    ),
+
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      'Or Continue With',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+
+                    // social media button.
+                    const GoogleButton(),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'I have an account?',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              Get.to(() => const SignIn());
+                            },
+                            child: const Text(
+                              'Sign In',
+                              style: TextStyle(color: Colors.black),
+                            ))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-      )
-    );
+      ),
+    ));
   }
 
-  @override
-  void dispose() {
-    _pwdController.dispose();
-    _emailController.dispose();
-    super.dispose();
-  }
+ 
 }
