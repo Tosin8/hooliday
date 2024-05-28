@@ -47,7 +47,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
           children: [
 
             FadeIn(
-              duration: Duration(milliseconds: 500), 
+              duration: const Duration(milliseconds: 1000), 
               curve: Curves.easeIn,
               child: const Text('Hooliday', 
               style: TextStyle(
@@ -64,14 +64,20 @@ class _OnboardScreenState extends State<OnboardScreen> {
               height: 10,
             ), 
             const SizedBox(height: 10,), 
-const Text('EXPLORE YOUR \nJOURNEY WITH US', 
-style: TextStyle(
-  color: Colors.white, 
-  fontSize: 20, 
-  wordSpacing: 2.0),
-  textAlign: TextAlign.center,
+FadeIn(
+  duration: const Duration(milliseconds: 1000), 
+  delay: const Duration(milliseconds: 1000), 
+  curve: Curves.easeIn,
   
-  ), 
+  child: const Text('EXPLORE YOUR \nJOURNEY WITH US', 
+  style: TextStyle(
+    color: Colors.white, 
+    fontSize: 20, 
+    wordSpacing: 2.0),
+    textAlign: TextAlign.center,
+    
+    ),
+), 
   const SizedBox(height: 10,), 
   const Text('All your vacations destinations are here', style: TextStyle(color: Colors.grey),), 
   const SizedBox(height: 30,), 
