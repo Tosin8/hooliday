@@ -6,7 +6,6 @@ import 'package:iconsax/iconsax.dart';
 
 import '../signup/signup.dart';
 import 'widgets/buttons/google_button.dart';
-import 'widgets/buttons/login_button.dart';
 
 
 
@@ -26,6 +25,11 @@ class _SignInState extends State<SignIn> {
     if (value == null || value.isEmpty) {
       return 'Please enter your email';
     }
+     String pattern = r'^[^@]+@[^@]+\.[^@]+';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) {
+      return 'Enter a valid email address';
+    }
     return null;
   }
 
@@ -33,6 +37,7 @@ class _SignInState extends State<SignIn> {
     if (value == null || value.isEmpty) {
       return 'Please enter your password';
     }
+    
     return null;
   }
 
@@ -44,7 +49,10 @@ class _SignInState extends State<SignIn> {
 
       // For demonstration purposes, we'll just show a snackbar with the entered values
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Email: $email\nPassword: $password')),
+        SnackBar(
+          elevation: 0,
+          behavior: SnackBarBehavior.floating,
+          content: Text('Email: $email\nPassword: $password')),
       );
     }
 
@@ -140,7 +148,18 @@ controller: _pwdController,
                       
                       // Button. 
                           const SizedBox(height: 30,), 
-                      const SignInButton(), 
+                    GestureDetector( 
+                      onTap: _submitForm,
+                      child: Container(
+                        height: 60, width: 300, 
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.0),
+                          color: Colors.black
+                        ),
+                        child: const Align(child: Text('Login', style: TextStyle(color: Colors.white, 
+                        fontSize: 16),)),
+                      ),
+                    ), 
                       const SizedBox(height: 20,), 
                       const Text('Or Continue With', 
                       style: TextStyle(color: Colors.grey),), 

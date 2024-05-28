@@ -101,7 +101,7 @@ class _SignUpState extends State<SignUp> {
                       
                       // Button. 
                           const SizedBox(height: 30,), 
-                      const SignInButton(), 
+                      //const SignInButton(), 
                       const SizedBox(height: 20,), 
                       const Text('Or Continue With', 
                       style: TextStyle(color: Colors.grey),), 
