@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hooliday/screens/forms/Auth/controllers/signup_controllers.dart';
 import 'package:hooliday/screens/forms/signin/login.dart';
 import 'package:hooliday/screens/forms/verify.dart';
 import 'package:iconsax/iconsax.dart';
@@ -19,38 +20,38 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final SignUpFormController controller = Get.put( SignUpFormController());
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-    final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _pwdController = TextEditingController();
+    
   bool _isLoading = false; // Add this variable to track loading state
 
-  String? _validateEmail(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Please enter your email';
-    }
-     String pattern = r'^[^@]+@[^@]+\.[^@]+';
-    RegExp regex = RegExp(pattern);
-    if (!regex.hasMatch(value)) {
-      return 'Enter a valid email address';
-    }
-    return null;
-  }
+  // String? _validateEmail(String? value) {
+  //   if (value == null || value.isEmpty) {
+  //     return 'Please enter your email';
+  //   }
+  //    String pattern = r'^[^@]+@[^@]+\.[^@]+';
+  //   RegExp regex = RegExp(pattern);
+  //   if (!regex.hasMatch(value)) {
+  //     return 'Enter a valid email address';
+  //   }
+  //   return null;
+  // }
 
-  String? _validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Please enter your password';
-    }
-    if (value.length < 6) {
-      return 'Password must be at least 6 characters long';
-    }
-    String pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{6,}$';
-    RegExp regex = RegExp(pattern);
-    if (!regex.hasMatch(value)) {
-      return 'Password must contain a letter, number and symbol';
-    }
+  // String? _validatePassword(String? value) {
+  //   if (value == null || value.isEmpty) {
+  //     return 'Please enter your password';
+  //   }
+  //   if (value.length < 6) {
+  //     return 'Password must be at least 6 characters long';
+  //   }
+  //   String pattern = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{6,}$';
+  //   RegExp regex = RegExp(pattern);
+  //   if (!regex.hasMatch(value)) {
+  //     return 'Password must contain a letter, number and symbol';
+  //   }
     
-    return null;
-  }
+  //   return null;
+  // }
 
   Future<void> _submitForm() async{
     if (_formKey.currentState!.validate()) {
@@ -110,6 +111,8 @@ class _SignUpState extends State<SignUp> {
 
                       // Email ID 
                       TextFormField(
+                        controller: controller.emailController, 
+                        validator: controller.validateEmail, 
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         decoration:  const InputDecoration(
