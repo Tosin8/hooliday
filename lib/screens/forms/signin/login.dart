@@ -190,7 +190,7 @@ controller: _pwdController,
                             SizedBox(
                               height: 20,
                                width: 20,
-                                child: CircularProgressIndicator(color: Colors.white,strokeWidth: 2.0
+                                child: CircularProgressIndicator(color: Colors.black,strokeWidth: 2.0
                                 ),
                                 ), 
                                 
