@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
@@ -45,13 +46,17 @@ class _OnboardScreenState extends State<OnboardScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
 
-            const Text('Hooliday', 
-            style: TextStyle(
-              color: Colors.white,
-               fontSize: 16, 
-               fontWeight: FontWeight.w500, 
-               letterSpacing: 2.0, 
-            ),), 
+            FadeIn(
+              duration: Duration(milliseconds: 500), 
+              curve: Curves.easeIn,
+              child: const Text('Hooliday', 
+              style: TextStyle(
+                color: Colors.white,
+                 fontSize: 16, 
+                 fontWeight: FontWeight.w500, 
+                 letterSpacing: 2.0, 
+              ),),
+            ), 
             const SizedBox(height: 10,),
             const Divider(
               indent: 50,
