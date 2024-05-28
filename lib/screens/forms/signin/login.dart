@@ -19,16 +19,35 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  
-  final _emailController = TextEditingController();
-  final _pwdController = TextEditingController(); 
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _pwdController = TextEditingController();
 
-  @override
-  void dispose() {
-    _pwdController.dispose();
-    _emailController.dispose();
-    
-    super.dispose();
+  String? _validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your email';
+    }
+    return null;
+  }
+
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your password';
+    }
+    return null;
+  }
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      // Perform the sign-in action
+      String email = _emailController.text;
+      String password = _pwdController.text;
+
+      // For demonstration purposes, we'll just show a snackbar with the entered values
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Email: $email\nPassword: $password')),
+      );
+    }
+
   }
   
   @override
@@ -64,12 +83,7 @@ class _SignInState extends State<SignIn> {
                       TextFormField(
                         style: TextStyle(color: Colors.white),
                         controller: _emailController, 
-                        validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please fill this field';
-                    }
-                    return null;
-                  },
+                        validator: _validateEmail,
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         decoration:  const InputDecoration(
@@ -95,6 +109,7 @@ class _SignInState extends State<SignIn> {
                       TextFormField(
 controller: _pwdController,
                         obscureText: true,
+                        validator: _validatePassword,
                         //obscuringCharacter: '',
                         keyboardType: TextInputType.visiblePassword,
                         textInputAction: TextInputAction.done,
@@ -156,4 +171,15 @@ controller: _pwdController,
       )
     );
   }
+
+  @override
+  void dispose() {
+    _pwdController.dispose();
+    _emailController.dispose();
+    
+    super.dispose();
+  }
+
 }
+
+
