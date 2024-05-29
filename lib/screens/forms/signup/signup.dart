@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
   final SignUpFormController controller = Get.put(SignUpFormController());
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  bool _isLoading = false; // Add this variable to track loading state
+  // bool _isLoading = false; // Add this variable to track loading state
 
   // String? _validateEmail(String? value) {
   //   if (value == null || value.isEmpty) {
