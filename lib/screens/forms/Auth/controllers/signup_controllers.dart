@@ -1,9 +1,15 @@
+
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hooliday/screens/forms/verify.dart';
 
 class SignUpFormController extends GetxController {
   var isPasswordHidden = true.obs;
   var isConfirmPasswordHidden = true.obs;
+  var isLoading = false.obs; 
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
@@ -60,4 +66,31 @@ class SignUpFormController extends GetxController {
     }
     return null;
   }
+  
+  bool validateForm() {
+  return _formKey.currentState?.validate() ?? false; 
+}
+
+
+Future<void> signUp() async {
+  if (Get.find<SignUpFormController>().validateForm()) {
+  try {
+    var isLoading = false.obs; 
+    isLoading.value = true; 
+    UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: Get.find<SignUpFormController>().emailController.text,
+      password: Get.find<SignUpFormController>().passwordController.text,
+    );
+    await userCredential.user?.sendEmailVerification(); 
+    Get.to(() => const EmailVerificationScreen());
+
+  } on FirebaseAuthException catch (e) {
+    Get.snackbar('Error', e.message ?? 'Unknown error occurred'); 
+  } finally {
+    var isLoading = false.obs; 
+    isLoading.value = false; 
+  }
+  }
+}
+
 }

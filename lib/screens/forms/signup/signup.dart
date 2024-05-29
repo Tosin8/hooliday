@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooliday/screens/forms/Auth/controllers/signup_controllers.dart';
 import 'package:hooliday/screens/forms/signin/login.dart';
-import 'package:hooliday/screens/forms/verify.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../signin/widgets/buttons/google_button.dart';
-import '../signin/widgets/buttons/login_button.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -50,32 +48,33 @@ class _SignUpState extends State<SignUp> {
   //   return null;
   // }
 
-  Future<void> _submitForm() async {
-    if (_formKey.currentState!.validate()) {
-      setState(() {
-        _isLoading = true;
-      });
+  // Future<void> _submitForm() async {
+  //   if (_formKey.currentState!.validate()) {
+  //     setState(() {
+  //       _isLoading = true;
+  //     });
 
-      await Future.delayed(
-          const Duration(seconds: 2)); // Simulate a delay of 2 seconds
+  //     await Future.delayed(
+  //         const Duration(seconds: 2)); // Simulate a delay of 2 seconds
 
-      setState(() {
-        _isLoading = false;
-      });
-      Get.to(() => const VerifyScreen());
-      // Perform the sign-in action
-      // String email = _emailController.text;
-      // String password = _pwdController.text;
+  //     setState(() {
+  //       _isLoading = false;
+  //     });
+  //     Get.to(() => const VerifyScreen()
+  //     );
+  //     // Perform the sign-in action
+  //     // String email = _emailController.text;
+  //     // String password = _pwdController.text;
 
-      // For demonstration purposes, we'll just show a snackbar with the entered values
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   SnackBar(
-      //     elevation: 0,
-      //     behavior: SnackBarBehavior.floating,
-      //     content: Text('Email: $email\nPassword: $password')),
-      // );
-    }
-  }
+  //     // For demonstration purposes, we'll just show a snackbar with the entered values
+  //     // ScaffoldMessenger.of(context).showSnackBar(
+  //     //   SnackBar(
+  //     //     elevation: 0,
+  //     //     behavior: SnackBarBehavior.floating,
+  //     //     content: Text('Email: $email\nPassword: $password')),
+  //     // );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +115,7 @@ class _SignUpState extends State<SignUp> {
 
                     // Email ID
                     TextFormField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       controller: controller.emailController,
                       validator: controller.validateEmail,
                       keyboardType: TextInputType.emailAddress,
@@ -146,7 +145,7 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         Expanded(
                           child: TextFormField(
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                             controller: controller.firstNameController,
                             validator: controller.validateName,
                             keyboardType: TextInputType.name,
@@ -169,12 +168,12 @@ class _SignUpState extends State<SignUp> {
                                 hintStyle: TextStyle(color: Colors.grey)),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
                           child: TextFormField(
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                             controller: controller.lastNameController,
                             validator: controller.validateName,
                             keyboardType: TextInputType.name,
@@ -206,7 +205,7 @@ class _SignUpState extends State<SignUp> {
                     // Password
                     Obx(
                       () => TextFormField(
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                         controller: controller.passwordController,
                         obscureText: controller.isPasswordHidden.value,
                         validator: controller.validatePassword,
@@ -216,7 +215,7 @@ class _SignUpState extends State<SignUp> {
                           filled: true,
                           fillColor: Colors.black,
                             floatingLabelBehavior: FloatingLabelBehavior.always,
-                            prefixIcon: Icon(Iconsax.lock, color: Colors.white,),
+                            prefixIcon: const Icon(Iconsax.lock, color: Colors.white,),
                             suffixIcon: IconButton(
                               icon: Icon(controller.isPasswordHidden.value
                                   ? Iconsax.eye_slash
@@ -226,16 +225,16 @@ class _SignUpState extends State<SignUp> {
                                     !controller.isPasswordHidden.value;
                               },
                             ),
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(12.0)),
                             ),
-                            focusedBorder: OutlineInputBorder(
+                            focusedBorder: const OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(12.0)),
                             ),
                             hintText: 'Password',
-                            hintStyle: TextStyle(color: Colors.grey)),
+                            hintStyle: const TextStyle(color: Colors.grey)),
                       ),
                     ),
 
@@ -245,7 +244,7 @@ class _SignUpState extends State<SignUp> {
 
                     // Repeat Password
                     Obx(() => TextFormField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       controller: controller.confirmPasswordController, 
                       validator: controller.validateConfirmPassword, 
                       
@@ -257,30 +256,30 @@ class _SignUpState extends State<SignUp> {
                           fillColor: Colors.black,
                               floatingLabelBehavior:
                                   FloatingLabelBehavior.always,
-                              prefixIcon: Icon(Iconsax.lock, color: Colors.white,),
+                              prefixIcon: const Icon(Iconsax.lock, color: Colors.white,),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   controller.isConfirmPasswordHidden.value = !controller.isConfirmPasswordHidden.value;
                                 },
                                 icon: Icon(controller.isConfirmPasswordHidden.value ? Iconsax.eye_slash : Iconsax.eye)),
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12.0)),
                               ),
-                              focusedBorder: OutlineInputBorder(
+                              focusedBorder: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12.0)),
                               ),
                               hintText: 'Repeat Password',
-                              hintStyle: TextStyle(color: Colors.grey)),
+                              hintStyle: const TextStyle(color: Colors.grey)),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
 
                     // Phone Number
                     TextFormField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       controller: controller.phoneNumberController, 
                       validator: controller.validatePhoneNumber,
                       keyboardType: TextInputType.phone,
@@ -311,14 +310,16 @@ class _SignUpState extends State<SignUp> {
                     ),
 
                     GestureDetector(
-                      onTap: _isLoading ? null : _submitForm,
+                     // onTap: _isLoading ? null : _submitForm,
+                     onTap: controller.signUp, 
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30.0),
                             color: Colors.black),
-                        child: _isLoading
+                       // child: _isLoading
+                       child: Obx(() => controller.isLoading.value
                             ? const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -337,8 +338,8 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                 ],
                               )
-                            : Align(
-                                child: const Text(
+                            : const Align(
+                                child: Text(
                                   'Sign Up',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 16),
@@ -346,8 +347,8 @@ class _SignUpState extends State<SignUp> {
                               ),
                       ),
                     ),
-
-                    const SizedBox(
+                    ), 
+                    SizedBox(
                       height: 10,
                     ),
                     const Text(
