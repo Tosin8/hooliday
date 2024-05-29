@@ -116,13 +116,16 @@ class _SignUpState extends State<SignUp> {
 
                     // Email ID
                     TextFormField(
+                      style: TextStyle(color: Colors.white),
                       controller: controller.emailController,
                       validator: controller.validateEmail,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                       decoration: const InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          prefixIcon: Icon(Iconsax.message),
+                          prefixIcon: Icon(Iconsax.message, color: Colors.white,),
+                          filled: true,
+                          fillColor: Colors.black,
                           border: OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(12.0)),
@@ -143,6 +146,7 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         Expanded(
                           child: TextFormField(
+                            style: TextStyle(color: Colors.white),
                             controller: controller.firstNameController,
                             validator: controller.validateName,
                             keyboardType: TextInputType.name,
@@ -150,7 +154,9 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
-                                prefixIcon: Icon(Iconsax.user),
+                                prefixIcon: Icon(Iconsax.user, color: Colors.white,),
+                                filled: true,
+                          fillColor: Colors.black,
                                 border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(12.0)),
@@ -168,6 +174,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         Expanded(
                           child: TextFormField(
+                            style: TextStyle(color: Colors.white),
                             controller: controller.lastNameController,
                             validator: controller.validateName,
                             keyboardType: TextInputType.name,
@@ -175,7 +182,9 @@ class _SignUpState extends State<SignUp> {
                             decoration: const InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
-                                prefixIcon: Icon(Iconsax.user),
+                                prefixIcon: Icon(Iconsax.user, color: Colors.white,),
+                                filled: true,
+                          fillColor: Colors.black,
                                 border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(12.0)),
@@ -197,14 +206,17 @@ class _SignUpState extends State<SignUp> {
                     // Password
                     Obx(
                       () => TextFormField(
+                        style: TextStyle(color: Colors.white),
                         controller: controller.passwordController,
                         obscureText: controller.isPasswordHidden.value,
                         validator: controller.validatePassword,
                         keyboardType: TextInputType.visiblePassword,
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.black,
                             floatingLabelBehavior: FloatingLabelBehavior.always,
-                            prefixIcon: Icon(Iconsax.lock),
+                            prefixIcon: Icon(Iconsax.lock, color: Colors.white,),
                             suffixIcon: IconButton(
                               icon: Icon(controller.isPasswordHidden.value
                                   ? Iconsax.eye_slash
@@ -233,6 +245,7 @@ class _SignUpState extends State<SignUp> {
 
                     // Repeat Password
                     Obx(() => TextFormField(
+                      style: TextStyle(color: Colors.white),
                       controller: controller.confirmPasswordController, 
                       validator: controller.validateConfirmPassword, 
                       
@@ -240,9 +253,11 @@ class _SignUpState extends State<SignUp> {
                           keyboardType: TextInputType.visiblePassword,
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
+                            filled: true,
+                          fillColor: Colors.black,
                               floatingLabelBehavior:
                                   FloatingLabelBehavior.always,
-                              prefixIcon: Icon(Iconsax.lock),
+                              prefixIcon: Icon(Iconsax.lock, color: Colors.white,),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   controller.isConfirmPasswordHidden.value = !controller.isConfirmPasswordHidden.value;
@@ -265,13 +280,16 @@ class _SignUpState extends State<SignUp> {
 
                     // Phone Number
                     TextFormField(
+                      style: TextStyle(color: Colors.white),
                       controller: controller.phoneNumberController, 
                       validator: controller.validatePhoneNumber,
                       keyboardType: TextInputType.phone,
                       textInputAction: TextInputAction.next,
                       decoration: const InputDecoration(
+                        filled: true,
+                          fillColor: Colors.black,
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          prefixIcon: Icon(Icons.phone),
+                          prefixIcon: Icon(Icons.phone, color: Colors.white,),
                           border: OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(12.0)),
