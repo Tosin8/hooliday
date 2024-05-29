@@ -10,6 +10,8 @@ class VerifyScreen extends StatefulWidget {
 class _VerifyScreenState extends State<VerifyScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold( 
+      body: 
+    );
   }
 }

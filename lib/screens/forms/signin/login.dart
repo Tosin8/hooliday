@@ -81,7 +81,7 @@ class _SignInState extends State<SignIn> {
                                 BorderRadius.all(Radius.circular(12.0)),
                           ),
                           hintText: 'Email ID',
-                          hintStyle: TextStyle(color: Colors.white)),
+                          hintStyle: TextStyle(color: Colors.grey)),
                     ),
                     const SizedBox(
                       height: 20,
@@ -155,7 +155,7 @@ class _SignInState extends State<SignIn> {
                                     height: 20,
                                     width: 20,
                                     child: CircularProgressIndicator(
-                                        color: Colors.black, strokeWidth: 2.0),
+                                        color: Colors.white, strokeWidth: 2.0),
                                   ),
                                   SizedBox(
                                     width: 10,
