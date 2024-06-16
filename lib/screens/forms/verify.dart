@@ -57,7 +57,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                Get.offAll(() => SignIn());
+                Get.offAll(() => const SignIn());
               },
               child: const Text('Back to Sign In'),
             ),

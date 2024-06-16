@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +101,7 @@ class _SignInState extends State<SignIn> {
                               fillColor: Colors.black,
                               floatingLabelBehavior:
                                   FloatingLabelBehavior.always,
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Iconsax.lock,
                                 color: Colors.white,
                               ),
@@ -112,16 +111,16 @@ class _SignInState extends State<SignIn> {
                                   color: Colors.white,
                                 ),
                               ),
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12.0)),
                               ),
-                              focusedBorder: OutlineInputBorder(
+                              focusedBorder: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12.0)),
                               ),
                               hintText: 'Password',
-                              hintStyle: TextStyle(color: Colors.grey)),
+                              hintStyle: const TextStyle(color: Colors.grey)),
                         )),
 
                     const SizedBox(
@@ -166,8 +165,8 @@ class _SignInState extends State<SignIn> {
                                   ),
                                 ],
                               )
-                            : Align(
-                                child: const Text(
+                            : const Align(
+                                child: Text(
                                   'Login',
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 16),

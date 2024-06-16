@@ -26,11 +26,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         // useMaterial3: true,
-        primaryColor: Color(0xFF3Ebace),
-        hintColor: Color(0xffd8ecf1),
-        scaffoldBackgroundColor: Color(0xfff3f5f7),
+        primaryColor: const Color(0xFF3Ebace),
+        hintColor: const Color(0xffd8ecf1),
+        scaffoldBackgroundColor: const Color(0xfff3f5f7),
       ),
-      home: OnboardScreen(),
+      home: const OnboardScreen(),
     );
   }
 }
