@@ -17,19 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-int currentIndex = 0;
-  final List<Widget> _children = [
-    HomeScreen(),
-    UserProfile(),
-    UserExplore(),
-    UserFavs()
-  ];
 
-  void changePage(int index) {
-    setState(() {
-      currentIndex = index;
-    });
-  }
 
   int _selectedIndex = 0;
 

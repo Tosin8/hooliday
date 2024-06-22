@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:hooliday/screens/navs.dart';
 
 import '../../../home_screen.dart';
 
@@ -44,7 +45,7 @@ class SignInController extends GetxController {
 
       isLoading.value = false;
 
-      Get.off(() => HomeScreen());
+      Get.off(() => NavsScreen());
     }
   }
 
