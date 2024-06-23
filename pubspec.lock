@@ -26,7 +26,7 @@ packages:
     source: hosted
     version: "2.11.0"
   badges:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: badges
       sha256: "727580d938b7a1ff47ea42df730d581415606b4224cfa708671c10287f8d3fe6"
