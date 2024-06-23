@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hooliday/screens/navs.dart';
 
-import '../../../home_screen.dart';
 
 class SignInController extends GetxController {
   var isLoading = false.obs;

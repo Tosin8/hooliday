@@ -4,6 +4,7 @@ import 'package:hooliday/screens/favorite.dart';
 import 'package:hooliday/screens/home_screen.dart';
 import 'package:hooliday/screens/profile.dart';
 import 'package:hooliday/screens/search.dart';
+import 'package:badges/badges.dart' as badges;
 
 class NavsScreen extends StatefulWidget {
   const NavsScreen({super.key});
@@ -17,10 +18,10 @@ class _NavsScreenState extends State<NavsScreen> {
   Widget build(BuildContext context) {
      int currentIndex = 0;
   final List<Widget> _children = [
-    HomeScreen(),
-    UserProfile(),
-    UserExplore(),
-    UserFavs()
+    const HomeScreen(),
+    const UserProfile(),
+    const UserExplore(),
+    const UserFavs()
   ];
 
   void changePage(int index) {
