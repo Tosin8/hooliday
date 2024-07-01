@@ -79,13 +79,13 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
         decoration: const InputDecoration(
           counterText: '',
         ),
-        onChanged: (value) {
-          if (value.length == 1 && nextFocus != null) {
-            nextFocus.requestFocus();
-          } else if (value.isEmpty && currentFocus != null) {
-            currentFocus.previousFocus();
-          }
-        },
+       onChanged: (value) {
+  if (value.length == 1 && nextFocus != null) {
+    nextFocus.requestFocus();
+  } else if (value.isEmpty && currentFocus != null) {
+    currentFocus.previousFocus();
+  }
+},
       ),
     );
   }

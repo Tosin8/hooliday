@@ -4,7 +4,7 @@ import 'package:hooliday/screens/favorite.dart';
 import 'package:hooliday/screens/home_screen.dart';
 import 'package:hooliday/screens/profile.dart';
 import 'package:hooliday/screens/search.dart';
-import 'package:badges/badges.dart' as badges;
+
 
 class NavsScreen extends StatefulWidget {
   const NavsScreen({super.key});
