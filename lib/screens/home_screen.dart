@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hooliday/extensions/destination_carousel.dart';
-import 'package:hooliday/extensions/hotel_carousel.dart';
-import 'package:hooliday/screens/favorite.dart';
-import 'package:hooliday/screens/profile.dart';
-import 'package:hooliday/screens/search.dart';
 
+
+import '../extensions/destination_carousel.dart';
 import '../extensions/event_carousel.dart';
+import '../extensions/hotel_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

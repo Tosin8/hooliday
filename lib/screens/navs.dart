@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hooliday/screens/favorite.dart';
-import 'package:hooliday/screens/home_screen.dart';
-import 'package:hooliday/screens/profile.dart';
-import 'package:hooliday/screens/search.dart';
+
 import 'package:iconsax/iconsax.dart';
+
+import 'favorite.dart';
+import 'home_screen.dart';
+import 'profile.dart';
+import 'search.dart';
 
 
 class BottomNav extends StatefulWidget {

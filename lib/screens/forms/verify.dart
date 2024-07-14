@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooliday/screens/forms/signin/login.dart';
-import 'package:hooliday/screens/home_screen.dart';
+
+
+import '../home_screen.dart';
+import 'signin/login.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
   const EmailVerificationScreen({super.key});
