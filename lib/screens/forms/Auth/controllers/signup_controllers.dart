@@ -3,7 +3,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooliday/screens/forms/verify.dart';
+
+import '../../verify.dart';
+
 
 class SignUpFormController extends GetxController {
   var isPasswordHidden = true.obs;

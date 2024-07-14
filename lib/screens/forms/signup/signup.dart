@@ -1,10 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooliday/screens/forms/Auth/controllers/signup_controllers.dart';
-import 'package:hooliday/screens/forms/signin/login.dart';
+
 import 'package:iconsax/iconsax.dart';
 
+import '../Auth/controllers/signup_controllers.dart';
+import '../signin/login.dart';
 import '../signin/widgets/buttons/google_button.dart';
 
 class SignUp extends StatefulWidget {

@@ -2,10 +2,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooliday/screens/forms/Auth/controllers/signin_controllers.dart';
+
 
 import 'package:iconsax/iconsax.dart';
 
+import '../Auth/controllers/signin_controllers.dart';
 import '../signup/signup.dart';
 import 'widgets/buttons/google_button.dart';
 

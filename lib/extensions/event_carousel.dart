@@ -1,5 +1,5 @@
+import 'package:Hooliday/models/festival_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hooliday/models/festival_model.dart';
 
 class EventsCarousel extends StatelessWidget {
   const EventsCarousel({super.key});
