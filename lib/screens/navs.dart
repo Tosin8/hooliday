@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hooliday/screens/favorite.dart';
+import 'package:hooliday/screens/home_screen.dart';
+import 'package:hooliday/screens/profile.dart';
+import 'package:hooliday/screens/search.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:multiva/screen/productList.dart';
 
-import 'screen/cart.dart';
-import 'screen/profile.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -16,9 +17,11 @@ class _BottomNavState extends State<BottomNav> {
   int index = 0;
 
   final screens = [
-    ProductScreen(), 
-    CartScreen(),
-    ProfileScreen(),
+    
+    HomeScreen(), 
+    UserExplore(), 
+    UserFavs(), 
+  UserProfile(),
   ]; 
   @override
   Widget build(BuildContext context) {
