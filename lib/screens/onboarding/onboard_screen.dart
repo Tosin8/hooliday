@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+
 import 'package:get/get.dart';
 import 'package:hooliday/screens/forms/signin/login.dart';
 import 'package:hooliday/screens/onboarding/splash_button.dart';

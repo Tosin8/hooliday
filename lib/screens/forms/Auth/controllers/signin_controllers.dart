@@ -44,7 +44,7 @@ class SignInController extends GetxController {
 
       isLoading.value = false;
 
-      Get.off(() => NavsScreen());
+      Get.off(() => BottomNav());
     }
   }
 
