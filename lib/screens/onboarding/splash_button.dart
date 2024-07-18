@@ -1,5 +1,7 @@
+import 'package:Hooliday/screens/home_screen.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OnboardButton extends StatelessWidget {
   const OnboardButton({super.key});
@@ -10,7 +12,9 @@ class OnboardButton extends StatelessWidget {
       curve: Curves.bounceIn, 
       
       child: GestureDetector( 
-      onTap: () {},
+      onTap: () {
+        Get.to(() => const HomeScreen());
+      },
       child: Container(
         height: 50,
         width: 300,
