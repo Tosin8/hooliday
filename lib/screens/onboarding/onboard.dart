@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:video_player/video_player.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class TravelHome extends StatefulWidget {
   const TravelHome({super.key});
@@ -245,6 +247,9 @@ class Screen extends StatelessWidget {
   }
 }
 
+
+
+
 class VideoBackground extends StatefulWidget {
   final String videoUrl;
 
@@ -256,17 +261,23 @@ class VideoBackground extends StatefulWidget {
 
 class _VideoBackgroundState extends State<VideoBackground> {
   late VideoPlayerController _controller;
+  bool _isInitialized = false;
 
   @override
   void initState() {
     super.initState();
-    // ignore: deprecated_member_use
-    _controller = VideoPlayerController.network(widget.videoUrl)
-      ..initialize().then((_) {
-        _controller.setLooping(true);
-        _controller.play();
-        setState(() {});
-      });
+    _loadCachedVideo();
+  }
+
+  Future<void> _loadCachedVideo() async {
+    var file = await DefaultCacheManager().getSingleFile(widget.videoUrl);
+    _controller = VideoPlayerController.file(file)
+      ..setLooping(true);
+    await _controller.initialize();
+    setState(() {
+      _isInitialized = true;
+      _controller.play();
+    });
   }
 
   @override
@@ -277,7 +288,7 @@ class _VideoBackgroundState extends State<VideoBackground> {
 
   @override
   Widget build(BuildContext context) {
-    return _controller.value.isInitialized
+    return _isInitialized
         ? SizedBox.expand(
             child: FittedBox(
               fit: BoxFit.cover,

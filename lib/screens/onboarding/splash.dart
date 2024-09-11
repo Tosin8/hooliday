@@ -24,20 +24,22 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.blueGrey, // Set the background color of your choice
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.airplanemode_active, size: 100, color: Colors.white),
+          children: [
+            Icon(Icons.airplanemode_active, size: 70, color: Colors.white),
             SizedBox(height: 20),
             SpinKitFadingCircle( // Optional loading animation
               color: Colors.white,
               size: 50.0,
             ),
             SizedBox(height: 20),
-            Text('Travel Explorer', style: TextStyle(color: Colors.white, fontSize: 24)),
+            Text('Hooliday', style: TextStyle(color: Colors.white, fontSize: 24)),
+             SizedBox(height: 10),
+            Text('All your vacations destinations are here, \ntravel with ease', style: TextStyle(color: Colors.white, fontSize: 18)),
           ],
         ),
       ),
