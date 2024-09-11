@@ -6,7 +6,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:get/get.dart';
 
 import '../../screens/forms/signin/login.dart';
-import '../../screens/onboarding/splash_button.dart';
+
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
@@ -85,7 +85,7 @@ FadeIn(
   const SizedBox(height: 30,), 
 
   // Button. 
-  const OnboardButton(),
+  //const OnboardButton(),
 
   // footer. 
   const SizedBox(height: 18,),
