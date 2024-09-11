@@ -1,8 +1,9 @@
+import 'package:Hooliday/screens/onboarding/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'screens/onboarding/onboard_screen.dart';
+import 'trashbin/reserve_code/onboard_screen.dart';
 
 
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         hintColor: const Color(0xffd8ecf1),
         scaffoldBackgroundColor: const Color(0xfff3f5f7),
       ),
-      home: const OnboardScreen(),
+      home: const SplashScreen(),
     );
   }
 }

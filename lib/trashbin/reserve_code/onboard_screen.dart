@@ -5,8 +5,8 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 import 'package:get/get.dart';
 
-import '../forms/signin/login.dart';
-import 'splash_button.dart';
+import '../../screens/forms/signin/login.dart';
+import '../../screens/onboarding/splash_button.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});

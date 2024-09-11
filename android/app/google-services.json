@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1078238886240",
-    "project_id": "hooliday-8c3c1",
-    "storage_bucket": "hooliday-8c3c1.appspot.com"
+    "project_number": "166376407860",
+    "project_id": "hooliday-92563",
+    "storage_bucket": "hooliday-92563.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1078238886240:android:0e129a49835717d44d8605",
+        "mobilesdk_app_id": "1:166376407860:android:4b48b593f23ebf12321b61",
         "android_client_info": {
           "package_name": "com.example.hooliday"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCaPHZr4XuHnbgU3JPgZcicZVIL22Pm5zc"
+          "current_key": "AIzaSyAnYFhCpxlYfJmf7BmNCVuZSaX-vpqVnp0"
         }
       ],
       "services": {

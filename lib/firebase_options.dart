@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCbCAwpUASQ5286oc1s_QHb_bJYacLMlbM',
-    appId: '1:1078238886240:web:ebb7b088fd9c98114d8605',
-    messagingSenderId: '1078238886240',
-    projectId: 'hooliday-8c3c1',
-    authDomain: 'hooliday-8c3c1.firebaseapp.com',
-    storageBucket: 'hooliday-8c3c1.appspot.com',
-    measurementId: 'G-5QVNYH4LJD',
+    apiKey: 'AIzaSyAYcCSjd93e54dqmBJ-UTZEO7Qb_XKmrTc',
+    appId: '1:166376407860:web:6db7a8b5d885d9b5321b61',
+    messagingSenderId: '166376407860',
+    projectId: 'hooliday-92563',
+    authDomain: 'hooliday-92563.firebaseapp.com',
+    storageBucket: 'hooliday-92563.appspot.com',
+    measurementId: 'G-V31M46Q0P7',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCaPHZr4XuHnbgU3JPgZcicZVIL22Pm5zc',
-    appId: '1:1078238886240:android:0e129a49835717d44d8605',
-    messagingSenderId: '1078238886240',
-    projectId: 'hooliday-8c3c1',
-    storageBucket: 'hooliday-8c3c1.appspot.com',
+    apiKey: 'AIzaSyAnYFhCpxlYfJmf7BmNCVuZSaX-vpqVnp0',
+    appId: '1:166376407860:android:4b48b593f23ebf12321b61',
+    messagingSenderId: '166376407860',
+    projectId: 'hooliday-92563',
+    storageBucket: 'hooliday-92563.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAyHtBr4tKhYrY-6IDpmpnnU8VF1geXq1I',
-    appId: '1:1078238886240:ios:99ee82637ea532bf4d8605',
-    messagingSenderId: '1078238886240',
-    projectId: 'hooliday-8c3c1',
-    storageBucket: 'hooliday-8c3c1.appspot.com',
+    apiKey: 'AIzaSyBZPFv_ga6HsAJHDSCm9hDCY19s3LS0jvo',
+    appId: '1:166376407860:ios:01e946cd937f3e9d321b61',
+    messagingSenderId: '166376407860',
+    projectId: 'hooliday-92563',
+    storageBucket: 'hooliday-92563.appspot.com',
     iosBundleId: 'com.example.hooliday',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAyHtBr4tKhYrY-6IDpmpnnU8VF1geXq1I',
-    appId: '1:1078238886240:ios:99ee82637ea532bf4d8605',
-    messagingSenderId: '1078238886240',
-    projectId: 'hooliday-8c3c1',
-    storageBucket: 'hooliday-8c3c1.appspot.com',
+    apiKey: 'AIzaSyBZPFv_ga6HsAJHDSCm9hDCY19s3LS0jvo',
+    appId: '1:166376407860:ios:01e946cd937f3e9d321b61',
+    messagingSenderId: '166376407860',
+    projectId: 'hooliday-92563',
+    storageBucket: 'hooliday-92563.appspot.com',
     iosBundleId: 'com.example.hooliday',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCbCAwpUASQ5286oc1s_QHb_bJYacLMlbM',
-    appId: '1:1078238886240:web:962dc77bfd4262984d8605',
-    messagingSenderId: '1078238886240',
-    projectId: 'hooliday-8c3c1',
-    authDomain: 'hooliday-8c3c1.firebaseapp.com',
-    storageBucket: 'hooliday-8c3c1.appspot.com',
-    measurementId: 'G-R489J4KYH7',
+    apiKey: 'AIzaSyAYcCSjd93e54dqmBJ-UTZEO7Qb_XKmrTc',
+    appId: '1:166376407860:web:19e58eeeb33f9aaa321b61',
+    messagingSenderId: '166376407860',
+    projectId: 'hooliday-92563',
+    authDomain: 'hooliday-92563.firebaseapp.com',
+    storageBucket: 'hooliday-92563.appspot.com',
+    measurementId: 'G-92JEZWF8BY',
   );
 }
