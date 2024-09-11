@@ -28,7 +28,7 @@ class _TravelHomeState extends State<TravelHome> {
   Future<void> fetchData() async {
     await Firebase.initializeApp();
     FirebaseFirestore.instance
-        .collection('onboarding_screens')
+        .collection('onboarding')
         .get()
         .then((snapshot) {
       setState(() {
