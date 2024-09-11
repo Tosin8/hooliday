@@ -260,6 +260,7 @@ class _VideoBackgroundState extends State<VideoBackground> {
   @override
   void initState() {
     super.initState();
+    // ignore: deprecated_member_use
     _controller = VideoPlayerController.network(widget.videoUrl)
       ..initialize().then((_) {
         _controller.setLooping(true);
